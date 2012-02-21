@@ -20,11 +20,11 @@
 		3000B58314F426C00054E59A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3000B58514F426C00054E59A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3000B58714F426C00054E59A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3000B58B14F426C00054E59A /* ToolKit-Info.plist */ = {isa = PBXFileReference; path = "ToolKit-Info.plist"; sourceTree = "<group>"; };
+		3000B58B14F426C00054E59A /* ToolKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToolKit-Info.plist"; sourceTree = "<group>"; };
 		3000B58D14F426C00054E59A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3000B58F14F426C00054E59A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3000B59114F426C00054E59A /* ToolKit-Prefix.pch */ = {isa = PBXFileReference; path = "ToolKit-Prefix.pch"; sourceTree = "<group>"; };
-		3000B59214F426C00054E59A /* UNCCAppDelegate.h */ = {isa = PBXFileReference; path = UNCCAppDelegate.h; sourceTree = "<group>"; };
+		3000B59114F426C00054E59A /* ToolKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToolKit-Prefix.pch"; sourceTree = "<group>"; };
+		3000B59214F426C00054E59A /* UNCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNCCAppDelegate.h; sourceTree = "<group>"; };
 		3000B59314F426C00054E59A /* UNCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UNCCAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
