@@ -13,6 +13,9 @@
 		3000B58E14F426C00054E59A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3000B58C14F426C00054E59A /* InfoPlist.strings */; };
 		3000B59014F426C00054E59A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3000B58F14F426C00054E59A /* main.m */; };
 		3000B59414F426C00054E59A /* UNCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3000B59314F426C00054E59A /* UNCCAppDelegate.m */; };
+		301FBB1814F427D50093161F /* GPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301FBB1714F427D50093161F /* GPSViewController.m */; };
+		301FBB1B14F428070093161F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB1A14F428070093161F /* MapKit.framework */; };
+		301FBB2114F4295C0093161F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB2014F4295C0093161F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		3000B59114F426C00054E59A /* ToolKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToolKit-Prefix.pch"; sourceTree = "<group>"; };
 		3000B59214F426C00054E59A /* UNCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNCCAppDelegate.h; sourceTree = "<group>"; };
 		3000B59314F426C00054E59A /* UNCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UNCCAppDelegate.m; sourceTree = "<group>"; };
+		301FBB1614F427D50093161F /* GPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSViewController.h; sourceTree = "<group>"; };
+		301FBB1714F427D50093161F /* GPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSViewController.m; sourceTree = "<group>"; };
+		301FBB1A14F428070093161F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		301FBB2014F4295C0093161F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301FBB2114F4295C0093161F /* CoreLocation.framework in Frameworks */,
+				301FBB1B14F428070093161F /* MapKit.framework in Frameworks */,
 				3000B58414F426C00054E59A /* UIKit.framework in Frameworks */,
 				3000B58614F426C00054E59A /* Foundation.framework in Frameworks */,
 				3000B58814F426C00054E59A /* CoreGraphics.framework in Frameworks */,
@@ -45,6 +54,8 @@
 		3000B57414F426BF0054E59A = {
 			isa = PBXGroup;
 			children = (
+				301FBB2014F4295C0093161F /* CoreLocation.framework */,
+				301FBB1A14F428070093161F /* MapKit.framework */,
 				3000B58914F426C00054E59A /* ToolKit */,
 				3000B58214F426C00054E59A /* Frameworks */,
 				3000B58014F426C00054E59A /* Products */,
@@ -74,6 +85,8 @@
 			children = (
 				3000B59214F426C00054E59A /* UNCCAppDelegate.h */,
 				3000B59314F426C00054E59A /* UNCCAppDelegate.m */,
+				301FBB1614F427D50093161F /* GPSViewController.h */,
+				301FBB1714F427D50093161F /* GPSViewController.m */,
 				3000B58A14F426C00054E59A /* Supporting Files */,
 			);
 			path = ToolKit;
@@ -153,6 +166,7 @@
 			files = (
 				3000B59014F426C00054E59A /* main.m in Sources */,
 				3000B59414F426C00054E59A /* UNCCAppDelegate.m in Sources */,
+				301FBB1814F427D50093161F /* GPSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +272,7 @@
 				3000B59914F426C00054E59A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

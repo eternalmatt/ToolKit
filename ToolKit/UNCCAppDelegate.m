@@ -7,16 +7,22 @@
 //
 
 #import "UNCCAppDelegate.h"
+#import "GPSViewController.h"
 
 @implementation UNCCAppDelegate
-
 @synthesize window = _window;
+@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.viewController = [[GPSViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = navcon;
+    
+
     [self.window makeKeyAndVisible];
     return YES;
 }
