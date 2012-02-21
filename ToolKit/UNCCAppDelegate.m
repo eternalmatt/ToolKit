@@ -8,6 +8,7 @@
 
 #import "UNCCAppDelegate.h"
 #import "GPSViewController.h"
+#import "AccelerationViewController.h"
 
 @implementation UNCCAppDelegate
 @synthesize window = _window;
@@ -18,7 +19,18 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.viewController = [[GPSViewController alloc] initWithNibName:nil bundle:nil];
+    self.viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+    /*
+    AccelerationViewController *accelerometer = [[AccelerationViewController alloc] initWithNibName:nil bundle:nil];
+    GPSViewController *location = [[GPSViewController alloc] initWithNibName:nil bundle:nil];
+    
+    UIView *view = self.viewController.view;
+    accelerometer.view.frame = CGRectMake(0,0,320,100);
+    location.view.frame = CGRectMake(0,100,320,300);
+    [view addSubview:accelerometer.view];
+    [view addSubview:location.view];
+    */
+    
     UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     self.window.rootViewController = navcon;
     
