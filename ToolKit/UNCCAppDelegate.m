@@ -7,8 +7,9 @@
 //
 
 #import "UNCCAppDelegate.h"
-#import "GPSViewController.h"
-#import "AccelerationViewController.h"
+#import "GPSView.h"
+#import "AccelerationView.h"
+#import "ToolKitViewController.h"
 
 @implementation UNCCAppDelegate
 @synthesize window = _window;
@@ -16,10 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    CGRect bounds = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+    //self.viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
     /*
     AccelerationViewController *accelerometer = [[AccelerationViewController alloc] initWithNibName:nil bundle:nil];
     GPSViewController *location = [[GPSViewController alloc] initWithNibName:nil bundle:nil];
@@ -31,10 +33,15 @@
     [view addSubview:location.view];
     */
     
+    //self.viewController = [[GPSViewController alloc] initWithNibName:nil bundle:nil];
+    
+    //UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    //self.window.rootViewController = navcon;
+    
+    
+    self.viewController = [[ToolKitViewController alloc] init];
     UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     self.window.rootViewController = navcon;
-    
-
     [self.window makeKeyAndVisible];
     return YES;
 }

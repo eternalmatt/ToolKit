@@ -13,12 +13,14 @@
 		3000B58E14F426C00054E59A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3000B58C14F426C00054E59A /* InfoPlist.strings */; };
 		3000B59014F426C00054E59A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3000B58F14F426C00054E59A /* main.m */; };
 		3000B59414F426C00054E59A /* UNCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3000B59314F426C00054E59A /* UNCCAppDelegate.m */; };
-		301FBB1814F427D50093161F /* GPSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301FBB1714F427D50093161F /* GPSViewController.m */; };
+		301FBB1814F427D50093161F /* GPSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301FBB1714F427D50093161F /* GPSView.m */; };
 		301FBB1B14F428070093161F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB1A14F428070093161F /* MapKit.framework */; };
 		301FBB2114F4295C0093161F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB2014F4295C0093161F /* CoreLocation.framework */; };
-		302DE28514F4420E00AAB79D /* AccelerationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DE28414F4420E00AAB79D /* AccelerationViewController.m */; };
+		302DE28514F4420E00AAB79D /* AccelerationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DE28414F4420E00AAB79D /* AccelerationView.m */; };
 		302DE28D14F4448E00AAB79D /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DE28C14F4448E00AAB79D /* GraphView.m */; };
 		302DE28F14F444D200AAB79D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302DE28E14F444D200AAB79D /* QuartzCore.framework */; };
+		A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5463E14F4AFB40075405B /* ToolKitViewController.m */; };
+		A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464514F547850075405B /* UIView+UIKitCategories.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,15 +34,19 @@
 		3000B59114F426C00054E59A /* ToolKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToolKit-Prefix.pch"; sourceTree = "<group>"; };
 		3000B59214F426C00054E59A /* UNCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNCCAppDelegate.h; sourceTree = "<group>"; };
 		3000B59314F426C00054E59A /* UNCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UNCCAppDelegate.m; sourceTree = "<group>"; };
-		301FBB1614F427D50093161F /* GPSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSViewController.h; sourceTree = "<group>"; };
-		301FBB1714F427D50093161F /* GPSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSViewController.m; sourceTree = "<group>"; };
+		301FBB1614F427D50093161F /* GPSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSView.h; sourceTree = "<group>"; };
+		301FBB1714F427D50093161F /* GPSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSView.m; sourceTree = "<group>"; };
 		301FBB1A14F428070093161F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		301FBB2014F4295C0093161F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		302DE28314F4420E00AAB79D /* AccelerationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerationViewController.h; sourceTree = "<group>"; };
-		302DE28414F4420E00AAB79D /* AccelerationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerationViewController.m; sourceTree = "<group>"; };
+		302DE28314F4420E00AAB79D /* AccelerationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerationView.h; sourceTree = "<group>"; };
+		302DE28414F4420E00AAB79D /* AccelerationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerationView.m; sourceTree = "<group>"; };
 		302DE28B14F4448E00AAB79D /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
 		302DE28C14F4448E00AAB79D /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 		302DE28E14F444D200AAB79D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A2B5463D14F4AFB40075405B /* ToolKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKitViewController.h; sourceTree = "<group>"; };
+		A2B5463E14F4AFB40075405B /* ToolKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKitViewController.m; sourceTree = "<group>"; };
+		A2B5464414F547850075405B /* UIView+UIKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIKitCategories.h"; sourceTree = "<group>"; };
+		A2B5464514F547850075405B /* UIView+UIKitCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIKitCategories.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,8 @@
 			children = (
 				3000B59214F426C00054E59A /* UNCCAppDelegate.h */,
 				3000B59314F426C00054E59A /* UNCCAppDelegate.m */,
+				A2B5463D14F4AFB40075405B /* ToolKitViewController.h */,
+				A2B5463E14F4AFB40075405B /* ToolKitViewController.m */,
 				302DE29014F4455200AAB79D /* Acceleration */,
 				302DE29114F4457C00AAB79D /* Location */,
 				3000B58A14F426C00054E59A /* Supporting Files */,
@@ -106,6 +114,8 @@
 				3000B58C14F426C00054E59A /* InfoPlist.strings */,
 				3000B58F14F426C00054E59A /* main.m */,
 				3000B59114F426C00054E59A /* ToolKit-Prefix.pch */,
+				A2B5464414F547850075405B /* UIView+UIKitCategories.h */,
+				A2B5464514F547850075405B /* UIView+UIKitCategories.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -113,8 +123,8 @@
 		302DE29014F4455200AAB79D /* Acceleration */ = {
 			isa = PBXGroup;
 			children = (
-				302DE28314F4420E00AAB79D /* AccelerationViewController.h */,
-				302DE28414F4420E00AAB79D /* AccelerationViewController.m */,
+				302DE28314F4420E00AAB79D /* AccelerationView.h */,
+				302DE28414F4420E00AAB79D /* AccelerationView.m */,
 				302DE28B14F4448E00AAB79D /* GraphView.h */,
 				302DE28C14F4448E00AAB79D /* GraphView.m */,
 				302DE28E14F444D200AAB79D /* QuartzCore.framework */,
@@ -125,8 +135,8 @@
 		302DE29114F4457C00AAB79D /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				301FBB1614F427D50093161F /* GPSViewController.h */,
-				301FBB1714F427D50093161F /* GPSViewController.m */,
+				301FBB1614F427D50093161F /* GPSView.h */,
+				301FBB1714F427D50093161F /* GPSView.m */,
 				301FBB2014F4295C0093161F /* CoreLocation.framework */,
 				301FBB1A14F428070093161F /* MapKit.framework */,
 			);
@@ -196,9 +206,11 @@
 			files = (
 				3000B59014F426C00054E59A /* main.m in Sources */,
 				3000B59414F426C00054E59A /* UNCCAppDelegate.m in Sources */,
-				301FBB1814F427D50093161F /* GPSViewController.m in Sources */,
-				302DE28514F4420E00AAB79D /* AccelerationViewController.m in Sources */,
+				301FBB1814F427D50093161F /* GPSView.m in Sources */,
+				302DE28514F4420E00AAB79D /* AccelerationView.m in Sources */,
 				302DE28D14F4448E00AAB79D /* GraphView.m in Sources */,
+				A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */,
+				A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
