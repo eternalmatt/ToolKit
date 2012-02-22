@@ -21,6 +21,7 @@
 		302DE28F14F444D200AAB79D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302DE28E14F444D200AAB79D /* QuartzCore.framework */; };
 		A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5463E14F4AFB40075405B /* ToolKitViewController.m */; };
 		A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464514F547850075405B /* UIView+UIKitCategories.m */; };
+		A2B5464E14F54B840075405B /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464D14F54B840075405B /* CameraView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		A2B5463E14F4AFB40075405B /* ToolKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKitViewController.m; sourceTree = "<group>"; };
 		A2B5464414F547850075405B /* UIView+UIKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIKitCategories.h"; sourceTree = "<group>"; };
 		A2B5464514F547850075405B /* UIView+UIKitCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIKitCategories.m"; sourceTree = "<group>"; };
+		A2B5464C14F54B840075405B /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		A2B5464D14F54B840075405B /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 				A2B5463D14F4AFB40075405B /* ToolKitViewController.h */,
 				A2B5463E14F4AFB40075405B /* ToolKitViewController.m */,
 				302DE29014F4455200AAB79D /* Acceleration */,
+				A2B5464F14F54B890075405B /* Camera */,
 				302DE29114F4457C00AAB79D /* Location */,
 				3000B58A14F426C00054E59A /* Supporting Files */,
 			);
@@ -141,6 +145,15 @@
 				301FBB1A14F428070093161F /* MapKit.framework */,
 			);
 			name = Location;
+			sourceTree = "<group>";
+		};
+		A2B5464F14F54B890075405B /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5464C14F54B840075405B /* CameraView.h */,
+				A2B5464D14F54B840075405B /* CameraView.m */,
+			);
+			name = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +224,7 @@
 				302DE28D14F4448E00AAB79D /* GraphView.m in Sources */,
 				A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */,
 				A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */,
+				A2B5464E14F54B840075405B /* CameraView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

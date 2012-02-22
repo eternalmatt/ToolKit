@@ -30,32 +30,13 @@
     [super loadView];
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
-    NSLog(@"%@", NSStringFromCGRect(bounds));
-    
-    bounds = CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height/2.0);
-    
-    NSLog(@"%@", NSStringFromCGRect(bounds));
+    bounds = CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height/3.0);
     [self.view addSubview:[[AccelerationView alloc] initWithFrame:bounds]];
     
-    bounds = CGRectMake(bounds.origin.x, bounds.size.height, bounds.size.width, bounds.size.height);
     
-    NSLog(@"%@", NSStringFromCGRect(bounds));
-    //CGRect bounds = [[UIScreen mainScreen] bounds];
+    bounds = CGRectMake(bounds.origin.x, bounds.size.height, bounds.size.width, [UIScreen mainScreen].bounds.size.height - bounds.size.height);
     [self.view addSubview:[[GPSView alloc] initWithFrame:bounds]];
     
-    
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

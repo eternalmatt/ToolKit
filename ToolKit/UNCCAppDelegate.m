@@ -21,27 +21,11 @@
     self.window = [[UIWindow alloc] initWithFrame:bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    //self.viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
-    /*
-    AccelerationViewController *accelerometer = [[AccelerationViewController alloc] initWithNibName:nil bundle:nil];
-    GPSViewController *location = [[GPSViewController alloc] initWithNibName:nil bundle:nil];
-    
-    UIView *view = self.viewController.view;
-    accelerometer.view.frame = CGRectMake(0,0,320,100);
-    location.view.frame = CGRectMake(0,100,320,300);
-    [view addSubview:accelerometer.view];
-    [view addSubview:location.view];
-    */
-    
-    //self.viewController = [[GPSViewController alloc] initWithNibName:nil bundle:nil];
-    
-    //UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    //self.window.rootViewController = navcon;
-    
     
     self.viewController = [[ToolKitViewController alloc] init];
     UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     self.window.rootViewController = navcon;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
