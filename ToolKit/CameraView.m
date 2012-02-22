@@ -64,7 +64,7 @@
         
         x = screen.origin.x + 10;
         y = screen.origin.y + 10;
-        width = screen.size.width - ( 2 * 10 );
+        width = 0;  //will be determined by image's aspect ratio
         height = takeButton.frame.origin.y - y - 10;
         bounds = CGRectMake(x,y,width,height);
         self.pickedImage = [[UIImageView alloc] initWithFrame:bounds];
@@ -82,7 +82,7 @@
     else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum])
         self.picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     
-    //[self.locationManager startUpdatingLocation]; 
+    [self.locationManager startUpdatingLocation]; 
     
     UIViewController *viewcon = [self firstAvailableUIViewController];
     [viewcon presentViewController:picker animated:YES completion:nil];
@@ -90,8 +90,14 @@
 
 -(void)uploadPicturePressed:(UIButton *)sender
 {
-    
-    
+    if (self.pickedImage.image)
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Success!"
+                                    message:@"Your photo has been uploaded" 
+                                   delegate:nil 
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"Ok", nil] show];
+    }
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -102,16 +108,24 @@
     CGFloat y = self.pickedImage.frame.origin.y;
     CGFloat height = self.pickedImage.frame.size.height;
     CGFloat width = height * image.size.width / image.size.height;
-    CGRect bounds = CGRectMake(x,y,width,height);
     
-    self.pickedImage.frame = bounds;
-    self.pickedImage.image = image;    
+    self.pickedImage.frame  = CGRectMake(x,y,width,height);
+    self.pickedImage.center = CGPointMake(self.center.x, self.pickedImage.center.y);
+    self.pickedImage.image  = image;
     
     
     UIViewController *viewcon = [self firstAvailableUIViewController];
     [viewcon dismissModalViewControllerAnimated:YES];
-    
 }
+
+-(void)locationManager:(CLLocationManager *)manager 
+   didUpdateToLocation:(CLLocation *)newLocation 
+          fromLocation:(CLLocation *)oldLocation
+{
+    [manager stopUpdatingLocation];
+
+    CGPoint point = CGPointMake(newLocation.coordinate.longitude, newLocation.coordinate.latitude);
+    NSLog(@"%@", NSStringFromCGPoint(point));}
 
 
 
