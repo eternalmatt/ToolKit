@@ -11,8 +11,8 @@
 
 @interface CameraView ()
 
--(void)buttonPressed:(UIButton*)sender;
-
+-(void)takePicturePressed:(UIButton*)sender;
+-(void)uploadPicturePressed:(UIButton*)sender;
 @end
 
 @implementation CameraView
@@ -45,7 +45,7 @@
         UIButton *takeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         takeButton.frame = bounds;
         [takeButton setTitle:@"Take a pic!" forState:UIControlStateNormal];
-        [takeButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [takeButton addTarget:self action:@selector(takePicturePressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:takeButton];
         
         
@@ -57,7 +57,7 @@
         UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         uploadButton.frame = bounds;
         [uploadButton setTitle:@"Upload" forState:UIControlStateNormal];
-        [uploadButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [uploadButton addTarget:self action:@selector(uploadPicturePressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:uploadButton];
         
         
@@ -73,7 +73,7 @@
     return self;
 }
 
--(void)buttonPressed:(UIButton *)sender
+-(void)takePicturePressed:(UIButton *)sender
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -86,6 +86,10 @@
     
     UIViewController *viewcon = [self firstAvailableUIViewController];
     [viewcon presentViewController:picker animated:YES completion:nil];
+}
+
+-(void)uploadPicturePressed:(UIButton *)sender
+{
     
     
 }

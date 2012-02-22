@@ -21,27 +21,22 @@ typedef enum {
 {
     if (self = [super initWithFrame:frame])
     {
-        self.locationManager = [[CLLocationManager alloc] init];
-        [self loadView];
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        self.locationManager = [[CLLocationManager alloc] init];        
+        
+        UIButton *startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        startButton.frame = CGRectMake(20, 20, self.frame.size.width-40, 40);
+        [startButton addTarget:self action:@selector(startButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [startButton setTitle:@"Start recording location" forState:UIControlStateNormal];
+        [startButton setTag:GPSStartUpdating];
+        [self addSubview:startButton];
+        
+        
+        self.mapView = [[MKMapView alloc] initWithFrame:self.frame];
+        self.mapView.showsUserLocation = YES;
+        self.mapView.delegate = self;
     }
     return self;
-}
-
-- (void)loadView
-{
-    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    
-    
-    UIButton *startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    startButton.frame = CGRectMake(20, 20, self.frame.size.width-40, 40);
-    [startButton addTarget:self action:@selector(startButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [startButton setTitle:@"Start recording location" forState:UIControlStateNormal];
-    [startButton setTag:GPSStartUpdating];
-    [self addSubview:startButton];
-    
-    self.mapView = [[MKMapView alloc] initWithFrame:self.frame];
-    self.mapView.showsUserLocation = YES;
-    self.mapView.delegate = self;
 }
 
 #pragma mark - Button Presses
@@ -51,7 +46,6 @@ typedef enum {
     UIViewController *viewcon = [[UIViewController alloc] initWithNibName:nil bundle:nil];
     viewcon.title = @"Locations";
     viewcon.view = self.mapView;
-    //[self.navigationController pushViewController:viewcon animated:YES];
     
     UIViewController *parent = [self firstAvailableUIViewController];
     [parent.navigationController pushViewController:viewcon animated:YES];

@@ -9,6 +9,7 @@
 #import "ToolKitViewController.h"
 #import "AccelerationView.h"
 #import "GPSView.h"
+#import "CameraView.h"
 
 @interface ToolKitViewController ()
 
@@ -30,8 +31,8 @@
     [super loadView];
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
-    bounds = CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height/3.0);
-    [self.view addSubview:[[AccelerationView alloc] initWithFrame:bounds]];
+    bounds = CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height/2.5);
+    [self.view addSubview:[[CameraView alloc] initWithFrame:bounds]];
     
     
     bounds = CGRectMake(bounds.origin.x, bounds.size.height, bounds.size.width, [UIScreen mainScreen].bounds.size.height - bounds.size.height);

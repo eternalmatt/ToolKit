@@ -15,20 +15,16 @@
 {
     if (self = [super initWithFrame:frame])
     {
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        
         UIAccelerometer *accelerometer = [UIAccelerometer sharedAccelerometer];
         accelerometer.delegate = self;
         accelerometer.updateInterval = 0.25;
-        [self loadView];
+        
+        self.graphView = [[GraphView alloc] initWithFrame:CGRectMake(20, 20, self.frame.size.width-40, 112)];
+        [self addSubview:self.graphView];   
     }
     return self;
-}
-
-- (void)loadView
-{
-    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    
-    self.graphView = [[GraphView alloc] initWithFrame:CGRectMake(20, 20, self.frame.size.width-40, 112)];
-    [self addSubview:self.graphView];
 }
 
 -(void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
