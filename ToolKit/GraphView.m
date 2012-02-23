@@ -59,6 +59,15 @@
 
 // Functions used to draw all content
 
+CGColorRef CreateDeviceGrayColor(CGFloat,CGFloat);
+CGColorRef CreateDeviceRGBColor(CGFloat r, CGFloat g, CGFloat b, CGFloat a);
+CGColorRef graphBackgroundColor(void);
+CGColorRef graphLineColor(void);
+CGColorRef graphXColor(void);
+CGColorRef graphYColor(void);
+CGColorRef graphZColor(void);
+void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width);
+
 CGColorRef CreateDeviceGrayColor(CGFloat w, CGFloat a)
 {
 	CGColorSpaceRef gray = CGColorSpaceCreateDeviceGray();
