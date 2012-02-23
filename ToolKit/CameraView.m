@@ -82,6 +82,16 @@
     else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum])
         self.picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     
+    
+    NSMutableArray *mediaTypes = [NSMutableArray array];
+    
+    [mediaTypes addObjectsFromArray:[UIImagePickerController availableMediaTypesForSourceType:self.picker.sourceType]];
+    [mediaTypes addObject:(NSString*)kUTTypeMovie];
+    
+    self.picker.mediaTypes = mediaTypes;
+    self.picker.allowsEditing = YES;
+    
+    
     [self.locationManager startUpdatingLocation]; 
     
     UIViewController *viewcon = [self firstAvailableUIViewController];
@@ -102,16 +112,27 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    if ([mediaType isEqualToString:@"public.image"])
+    {
+        UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+        if (nil == image)
+            image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        
+        CGFloat x = self.pickedImage.frame.origin.x;
+        CGFloat y = self.pickedImage.frame.origin.y;
+        CGFloat height = self.pickedImage.frame.size.height;
+        CGFloat width = height * image.size.width / image.size.height;
+        
+        self.pickedImage.frame  = CGRectMake(x,y,width,height);
+        self.pickedImage.center = CGPointMake(self.center.x, self.pickedImage.center.y);
+        self.pickedImage.image  = image;
+    }
+    else
+    {
+        
+    }
     
-    CGFloat x = self.pickedImage.frame.origin.x;
-    CGFloat y = self.pickedImage.frame.origin.y;
-    CGFloat height = self.pickedImage.frame.size.height;
-    CGFloat width = height * image.size.width / image.size.height;
-    
-    self.pickedImage.frame  = CGRectMake(x,y,width,height);
-    self.pickedImage.center = CGPointMake(self.center.x, self.pickedImage.center.y);
-    self.pickedImage.image  = image;
     
     
     UIViewController *viewcon = [self firstAvailableUIViewController];

@@ -20,6 +20,9 @@
 		302DE28D14F4448E00AAB79D /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DE28C14F4448E00AAB79D /* GraphView.m */; };
 		302DE28F14F444D200AAB79D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302DE28E14F444D200AAB79D /* QuartzCore.framework */; };
 		30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2914F6AB5A00BC0074 /* CameraView.m */; };
+		30C4EE3014F6CFCC00BC0074 /* VideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2F14F6CFCC00BC0074 /* VideoPlayerView.m */; };
+		30C4EE3214F6D02600BC0074 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C4EE3114F6D02600BC0074 /* AVFoundation.framework */; };
+		30C4EE3414F6D05B00BC0074 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C4EE3314F6D05B00BC0074 /* MobileCoreServices.framework */; };
 		A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5463E14F4AFB40075405B /* ToolKitViewController.m */; };
 		A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464514F547850075405B /* UIView+UIKitCategories.m */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,10 @@
 		302DE28E14F444D200AAB79D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		30C4EE2914F6AB5A00BC0074 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		30C4EE2A14F6AB5A00BC0074 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		30C4EE2E14F6CFCC00BC0074 /* VideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerView.h; sourceTree = "<group>"; };
+		30C4EE2F14F6CFCC00BC0074 /* VideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerView.m; sourceTree = "<group>"; };
+		30C4EE3114F6D02600BC0074 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		30C4EE3314F6D05B00BC0074 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A2B5463D14F4AFB40075405B /* ToolKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKitViewController.h; sourceTree = "<group>"; };
 		A2B5463E14F4AFB40075405B /* ToolKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKitViewController.m; sourceTree = "<group>"; };
 		A2B5464414F547850075405B /* UIView+UIKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIKitCategories.h"; sourceTree = "<group>"; };
@@ -57,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C4EE3414F6D05B00BC0074 /* MobileCoreServices.framework in Frameworks */,
+				30C4EE3214F6D02600BC0074 /* AVFoundation.framework in Frameworks */,
 				302DE28F14F444D200AAB79D /* QuartzCore.framework in Frameworks */,
 				3000B58814F426C00054E59A /* CoreGraphics.framework in Frameworks */,
 				301FBB2114F4295C0093161F /* CoreLocation.framework in Frameworks */,
@@ -150,8 +159,12 @@
 		A2B5464F14F54B890075405B /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				30C4EE2914F6AB5A00BC0074 /* CameraView.m */,
 				30C4EE2A14F6AB5A00BC0074 /* CameraView.h */,
+				30C4EE2914F6AB5A00BC0074 /* CameraView.m */,
+				30C4EE2E14F6CFCC00BC0074 /* VideoPlayerView.h */,
+				30C4EE2F14F6CFCC00BC0074 /* VideoPlayerView.m */,
+				30C4EE3314F6D05B00BC0074 /* MobileCoreServices.framework */,
+				30C4EE3114F6D02600BC0074 /* AVFoundation.framework */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -225,6 +238,7 @@
 				A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */,
 				A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */,
 				30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */,
+				30C4EE3014F6CFCC00BC0074 /* VideoPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
