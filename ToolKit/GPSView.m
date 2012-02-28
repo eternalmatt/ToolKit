@@ -14,20 +14,35 @@ typedef enum {
     GPSStopUpdating  = 1
 } GPSButtonType;
 
+@interface GPSView ()
+@property (strong, nonatomic) NSString *uploadButtonText;
+@property (strong, nonatomic) NSString *actionButtonStartText;
+@property (strong, nonatomic) NSString *actionButtonStopText;
+@property (strong, nonatomic) NSString *showMapButtonText;
+@end
+
 @implementation GPSView
 @synthesize label, mapView, locationManager;
+@synthesize uploadButtonText, actionButtonStartText, actionButtonStopText, showMapButtonText;
+
 #pragma mark - Initialization
 -(id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame])
     {
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
+        self.uploadButtonText = [bundle objectForKey:@"UploadButtonText"];
+        self.actionButtonStartText = [bundle objectForKey:@"ActionButtonStartText"];
+        self.actionButtonStopText = [bundle objectForKey:@"ActionButtonStopText"];
+        self.showMapButtonText = [bundle objectForKey:@"ShowMapButtonText"];
+        
         self.locationManager = [[CLLocationManager alloc] init];        
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
         
         UIButton *startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         startButton.frame = CGRectMake(20, 20, self.frame.size.width-40, 40);
         [startButton addTarget:self action:@selector(startButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [startButton setTitle:@"Start recording location" forState:UIControlStateNormal];
+        [startButton setTitle:self.actionButtonStartText forState:UIControlStateNormal];
         [startButton setTag:GPSStartUpdating];
         [self addSubview:startButton];
         
@@ -58,7 +73,7 @@ typedef enum {
 {
     if (sender.tag == GPSStartUpdating)
     {
-        [sender setTitle:@"Stop updating" forState:UIControlStateNormal];
+        [sender setTitle:self.actionButtonStopText forState:UIControlStateNormal];
         self.locationManager.delegate = self;		
         self.locationManager.distanceFilter = kCLDistanceFilterNone;
 		self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
@@ -76,7 +91,7 @@ typedef enum {
             UIButton *showButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 
             [showButton addTarget:self action:@selector(showButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-            [showButton setTitle:@"Show map" forState:UIControlStateNormal];
+            [showButton setTitle:self.showMapButtonText forState:UIControlStateNormal];
             [showButton setTag:GPSStartUpdating];
             
             
@@ -96,11 +111,11 @@ typedef enum {
     }
     else
     {
-        [sender setTitle:@"Resume updating" forState:UIControlStateNormal];
+        [sender setTitle:self.actionButtonStartText forState:UIControlStateNormal];
         [self.locationManager stopUpdatingLocation];
         self.locationManager.delegate = nil;
-        
     }
+    
     sender.tag = !sender.tag;
 }
 

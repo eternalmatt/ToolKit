@@ -43,5 +43,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UploadButtonText</key>
+	<string>Upload to Campaign</string>
+	<key>ActionButtonStartText</key>
+	<string>Start capture</string>
+	<key>ActionButtonStopText</key>
+	<string>Stop capture</string>
+	<key>ShowMapButtonText</key>
+	<string>Show map</string>
 </dict>
 </plist>
