@@ -23,6 +23,7 @@
 		30C4EE3014F6CFCC00BC0074 /* VideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2F14F6CFCC00BC0074 /* VideoPlayerView.m */; };
 		30C4EE3214F6D02600BC0074 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C4EE3114F6D02600BC0074 /* AVFoundation.framework */; };
 		30C4EE3414F6D05B00BC0074 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C4EE3314F6D05B00BC0074 /* MobileCoreServices.framework */; };
+		30C4EE4314F6DA5700BC0074 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE4214F6DA5700BC0074 /* VideoPlayerViewController.m */; };
 		A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5463E14F4AFB40075405B /* ToolKitViewController.m */; };
 		A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464514F547850075405B /* UIView+UIKitCategories.m */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,8 @@
 		30C4EE2F14F6CFCC00BC0074 /* VideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerView.m; sourceTree = "<group>"; };
 		30C4EE3114F6D02600BC0074 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		30C4EE3314F6D05B00BC0074 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		30C4EE4114F6DA5700BC0074 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
+		30C4EE4214F6DA5700BC0074 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
 		A2B5463D14F4AFB40075405B /* ToolKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKitViewController.h; sourceTree = "<group>"; };
 		A2B5463E14F4AFB40075405B /* ToolKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKitViewController.m; sourceTree = "<group>"; };
 		A2B5464414F547850075405B /* UIView+UIKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIKitCategories.h"; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				30C4EE2914F6AB5A00BC0074 /* CameraView.m */,
 				30C4EE2E14F6CFCC00BC0074 /* VideoPlayerView.h */,
 				30C4EE2F14F6CFCC00BC0074 /* VideoPlayerView.m */,
+				30C4EE4114F6DA5700BC0074 /* VideoPlayerViewController.h */,
+				30C4EE4214F6DA5700BC0074 /* VideoPlayerViewController.m */,
 				30C4EE3314F6D05B00BC0074 /* MobileCoreServices.framework */,
 				30C4EE3114F6D02600BC0074 /* AVFoundation.framework */,
 			);
@@ -239,6 +244,7 @@
 				A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */,
 				30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */,
 				30C4EE3014F6CFCC00BC0074 /* VideoPlayerView.m in Sources */,
+				30C4EE4314F6DA5700BC0074 /* VideoPlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

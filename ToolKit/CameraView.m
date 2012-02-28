@@ -84,9 +84,11 @@
     
     
     NSMutableArray *mediaTypes = [NSMutableArray array];
-    
-    [mediaTypes addObjectsFromArray:[UIImagePickerController availableMediaTypesForSourceType:self.picker.sourceType]];
+    [mediaTypes addObjectsFromArray:[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera]];
+    [mediaTypes addObjectsFromArray:[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary]];
+    [mediaTypes addObjectsFromArray:[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum]];
     [mediaTypes addObject:(NSString*)kUTTypeMovie];
+    
     
     self.picker.mediaTypes = mediaTypes;
     self.picker.allowsEditing = YES;
