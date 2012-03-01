@@ -10,6 +10,10 @@
 #import "UIView+UIKitCategories.h"
 
 @interface CameraView ()
+@property (strong, nonatomic) NSString *cameraButtonText;
+@property (strong, nonatomic) NSString *uploadButtonText;
+@property (strong, nonatomic) NSString *alertWindowSuccessTitle;
+@property (strong, nonatomic) NSString *alertWindowSuccessBody;
 
 -(void)takePicturePressed:(UIButton*)sender;
 -(void)uploadPicturePressed:(UIButton*)sender;
@@ -20,6 +24,7 @@
 @synthesize locationLabel;
 @synthesize pickedImage;
 @synthesize picker;
+@synthesize cameraButtonText, uploadButtonText, alertWindowSuccessTitle, alertWindowSuccessBody;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -34,6 +39,13 @@
         self.picker = [[UIImagePickerController alloc] init];
         self.picker.delegate = self;
         
+        NSDictionary *bundle         = [[NSBundle mainBundle] infoDictionary];
+        self.cameraButtonText        = [bundle objectForKey:@"CameraButtonText"];
+        self.uploadButtonText        = [bundle objectForKey:@"UploadButtonText"];
+        self.alertWindowSuccessTitle = [bundle objectForKey:@"AlertWindowSuccessTitle"];
+        self.alertWindowSuccessBody  = [bundle objectForKey:@"AlertWindowSuccessBody"];
+        
+        
         const CGRect screen = self.frame;//[[UIScreen mainScreen] bounds];
         
         CGFloat x = screen.origin.x + 10;
@@ -44,7 +56,7 @@
         
         UIButton *takeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         takeButton.frame = bounds;
-        [takeButton setTitle:@"Take a pic!" forState:UIControlStateNormal];
+        [takeButton setTitle:self.cameraButtonText forState:UIControlStateNormal];
         [takeButton addTarget:self action:@selector(takePicturePressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:takeButton];
         
@@ -56,7 +68,7 @@
         bounds = CGRectMake(x, y, width, height);
         UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         uploadButton.frame = bounds;
-        [uploadButton setTitle:@"Upload" forState:UIControlStateNormal];
+        [uploadButton setTitle:self.uploadButtonText forState:UIControlStateNormal];
         [uploadButton addTarget:self action:@selector(uploadPicturePressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:uploadButton];
         
@@ -92,8 +104,8 @@
 {
     if (self.pickedImage.image)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Success!"
-                                    message:@"Your photo has been uploaded" 
+        [[[UIAlertView alloc] initWithTitle:self.alertWindowSuccessTitle
+                                    message:self.alertWindowSuccessBody
                                    delegate:nil 
                           cancelButtonTitle:nil
                           otherButtonTitles:@"Ok", nil] show];
