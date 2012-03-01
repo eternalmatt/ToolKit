@@ -51,5 +51,11 @@
 	<string>Stop capture</string>
 	<key>ShowMapButtonText</key>
 	<string>Show map</string>
+	<key>CameraButtonText</key>
+	<string>Take a pic!</string>
+	<key>AlertWindowSuccessTitle</key>
+	<string>Success!</string>
+	<key>AlertWindowSuccessBody</key>
+	<string>Your photo has been uploaded.</string>
 </dict>
 </plist>
