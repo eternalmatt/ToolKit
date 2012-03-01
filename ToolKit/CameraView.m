@@ -8,6 +8,7 @@
 
 #import "CameraView.h"
 #import "UIView+UIKitCategories.h"
+#import "UIImage+ProportionalFill.h"
 
 @interface CameraView ()
 @property (strong, nonatomic) NSString *cameraButtonText;
@@ -123,7 +124,7 @@
     
     self.pickedImage.frame  = CGRectMake(x,y,width,height);
     self.pickedImage.center = CGPointMake(self.center.x, self.pickedImage.center.y);
-    self.pickedImage.image  = image;
+    self.pickedImage.image  = [image imageScaledToFitSize:CGSizeMake(width, height)];
     
     
     UIViewController *viewcon = [self firstAvailableUIViewController];
