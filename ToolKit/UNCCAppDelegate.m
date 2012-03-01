@@ -23,6 +23,9 @@
     
     
     self.viewController = [[ToolKitViewController alloc] init];
+    self.viewController.title = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    
+    
     UINavigationController *navcon = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     self.window.rootViewController = navcon;
     
