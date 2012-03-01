@@ -11,7 +11,11 @@
 
 @interface AccelerationView : UIView
 < UIAccelerometerDelegate >
+{
+    @private
+    NSMutableArray *accelerationData;
+}
 
-@property (strong, nonatomic) GraphView *graphView;
+@property (weak, nonatomic, readonly, getter=accelerationData) NSArray *data;
 
 @end
