@@ -69,6 +69,7 @@
         bounds = CGRectMake(x, y, width, height);
         UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         uploadButton.frame = bounds;
+        uploadButton.titleLabel.numberOfLines = 0;
         [uploadButton setTitle:self.uploadButtonText forState:UIControlStateNormal];
         [uploadButton addTarget:self action:@selector(uploadPicturePressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:uploadButton];

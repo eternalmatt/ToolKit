@@ -23,12 +23,16 @@
     CGRect bounds = [[UIScreen mainScreen] bounds];
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:bounds];
     
-    
-    bounds = CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, 192);
+    CGFloat y = bounds.origin.y;
+    bounds = CGRectMake(bounds.origin.x, y, bounds.size.width, 192);
     [scrollView addSubview:[[CameraView alloc] initWithFrame:bounds]];
+    y += bounds.size.height;
     
+    bounds = CGRectMake(bounds.origin.x, y, bounds.size.width, 192);
+    [scrollView addSubview:[[AccelerationView alloc] initWithFrame:bounds]];
+    y += bounds.size.height;
     
-    bounds = CGRectMake(bounds.origin.x, bounds.size.height, bounds.size.width, 250);
+    bounds = CGRectMake(bounds.origin.x, y, bounds.size.width, 250);
     [scrollView addSubview:[[GPSView alloc] initWithFrame:bounds]];
     
     CGSize contentSize = CGSizeMake(scrollView.frame.size.width, 0);
@@ -38,7 +42,6 @@
     }
     
     scrollView.contentSize = contentSize;
-    scrollView.pagingEnabled = YES;
     [self.view addSubview:scrollView];
 }
 

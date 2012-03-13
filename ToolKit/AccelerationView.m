@@ -73,6 +73,7 @@ enum { ActionButtonRecording = 0,
         bounds = CGRectMake(x, y, width, height);
         UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         uploadButton.frame = bounds;
+        uploadButton.titleLabel.numberOfLines = 0;
         [uploadButton setTitle:self.uploadButtonText forState:UIControlStateNormal];
         [uploadButton addTarget:self action:@selector(uploadButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:uploadButton];
