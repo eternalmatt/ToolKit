@@ -12,6 +12,6 @@
 
 
 
--(NSString*)createFileWithDictionary:(NSDictionary*)dictionary;
++(NSString*)createFileWithDictionary:(NSDictionary*)dictionary;
 
 @end

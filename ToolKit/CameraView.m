@@ -11,6 +11,7 @@
 #import "UIImage+ProportionalFill.h"
 #import "NSData+Base64.h"
 #import "NSString+Base64.h"
+#import "ToolKitXMLBuilder.h"
 
 @interface CameraView ()
 @property (strong, nonatomic) NSString *cameraButtonText;
@@ -110,9 +111,9 @@
     {        
         NSData *base64 = UIImagePNGRepresentation(self.pickedImage.image);
         NSString *string = [NSString base64StringFromData:base64 length:[base64 length]];
-        string = nil;
         /* do something with the NSString *string here and upload to server */
-        
+        NSDictionary *dictionary = [NSDictionary dictionaryWithObject:string forKey:@"camera"];
+        NSString *another = [ToolKitXMLBuilder createFileWithDictionary:dictionary];        
         
         [[[UIAlertView alloc] initWithTitle:self.alertWindowSuccessTitle
                                     message:self.alertWindowSuccessBody
