@@ -16,7 +16,7 @@
 
 @implementation ToolKitViewController
 
-- (void)loadView
+-(void)loadView
 {
     [super loadView];
     
@@ -45,7 +45,7 @@
     [self.view addSubview:scrollView];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
