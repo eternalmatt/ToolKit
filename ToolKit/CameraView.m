@@ -9,6 +9,8 @@
 #import "CameraView.h"
 #import "UIView+UIKitCategories.h"
 #import "UIImage+ProportionalFill.h"
+#import "NSData+Base64.h"
+#import "NSString+Base64.h"
 
 @interface CameraView ()
 @property (strong, nonatomic) NSString *cameraButtonText;
@@ -105,7 +107,13 @@
 -(void)uploadPicturePressed:(UIButton *)sender
 {
     if (self.pickedImage.image)
-    {
+    {        
+        NSData *base64 = UIImagePNGRepresentation(self.pickedImage.image);
+        NSString *string = [NSString base64StringFromData:base64 length:[base64 length]];
+        string = nil;
+        /* do something with the NSString *string here and upload to server */
+        
+        
         [[[UIAlertView alloc] initWithTitle:self.alertWindowSuccessTitle
                                     message:self.alertWindowSuccessBody
                                    delegate:nil 

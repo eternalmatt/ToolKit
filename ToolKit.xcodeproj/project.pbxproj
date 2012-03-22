@@ -21,6 +21,7 @@
 		302DE28F14F444D200AAB79D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302DE28E14F444D200AAB79D /* QuartzCore.framework */; };
 		30635C24151B9987009DE521 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C23151B9987009DE521 /* NSString+Base64.m */; };
 		30635C28151B9A4D009DE521 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C27151B9A4C009DE521 /* NSData+Base64.m */; };
+		30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */; };
 		30BB2C4E150006770027CD29 /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB2C4D150006770027CD29 /* UIImage+ProportionalFill.m */; };
 		30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2914F6AB5A00BC0074 /* CameraView.m */; };
 		A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5463E14F4AFB40075405B /* ToolKitViewController.m */; };
@@ -51,6 +52,8 @@
 		30635C23151B9987009DE521 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSString+Base64.m"; sourceTree = "<group>"; };
 		30635C26151B9A4C009DE521 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSData+Base64.h"; sourceTree = "<group>"; };
 		30635C27151B9A4C009DE521 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSData+Base64.m"; sourceTree = "<group>"; };
+		30635C29151BA887009DE521 /* ToolKitXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolKitXMLBuilder.h; path = ../../../../Toolkit/Xcode/ToolKit/ToolKit/ToolKitXMLBuilder.h; sourceTree = "<group>"; };
+		30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToolKitXMLBuilder.m; path = ../../../../Toolkit/Xcode/ToolKit/ToolKit/ToolKitXMLBuilder.m; sourceTree = "<group>"; };
 		30BB2C4C150006770027CD29 /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ProportionalFill.h"; path = "../../../../Toolkit/Xcode/ToolKit/MGImageUtilities/Classes/UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
 		30BB2C4D150006770027CD29 /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ProportionalFill.m"; path = "../../../../Toolkit/Xcode/ToolKit/MGImageUtilities/Classes/UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
 		30C4EE2914F6AB5A00BC0074 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				3000B59314F426C00054E59A /* UNCCAppDelegate.m */,
 				A2B5463D14F4AFB40075405B /* ToolKitViewController.h */,
 				A2B5463E14F4AFB40075405B /* ToolKitViewController.m */,
+				30635C29151BA887009DE521 /* ToolKitXMLBuilder.h */,
+				30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */,
 				302DE29014F4455200AAB79D /* Acceleration */,
 				A2B5464F14F54B890075405B /* Camera */,
 				302DE29114F4457C00AAB79D /* Location */,
@@ -243,6 +248,7 @@
 				30BB2C4E150006770027CD29 /* UIImage+ProportionalFill.m in Sources */,
 				30635C24151B9987009DE521 /* NSString+Base64.m in Sources */,
 				30635C28151B9A4D009DE521 /* NSData+Base64.m in Sources */,
+				30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
