@@ -57,5 +57,10 @@
 	<string>Success!</string>
 	<key>AlertWindowSuccessBody</key>
 	<string>Your photo has been uploaded.</string>
+	<key>TextInputTextBoxes</key>
+	<array>
+		<string>Testing text box one</string>
+		<string>Testing text box two</string>
+	</array>
 </dict>
 </plist>

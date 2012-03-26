@@ -106,7 +106,8 @@ enum { ActionButtonRecording = 0,
 -(void)accelerometer:(UIAccelerometer *)accelerometer 
        didAccelerate:(UIAcceleration *)acceleration
 {
-    [self.accelerationData addObject:acceleration];
+    //why is the compiler complaining about this line???
+    //[self.accelerationData addObject:acceleration];
     [self.graphView addX:acceleration.x y:acceleration.y z:acceleration.z];
 }
 

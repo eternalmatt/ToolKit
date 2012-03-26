@@ -24,6 +24,7 @@
 		30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */; };
 		30BB2C4E150006770027CD29 /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB2C4D150006770027CD29 /* UIImage+ProportionalFill.m */; };
 		30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2914F6AB5A00BC0074 /* CameraView.m */; };
+		A2A0A5AC151F9DD300D27E0B /* TextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0A5AB151F9DD300D27E0B /* TextInputView.m */; };
 		A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5463E14F4AFB40075405B /* ToolKitViewController.m */; };
 		A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464514F547850075405B /* UIView+UIKitCategories.m */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,8 @@
 		30BB2C4D150006770027CD29 /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ProportionalFill.m"; path = "../../../../Toolkit/Xcode/ToolKit/MGImageUtilities/Classes/UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
 		30C4EE2914F6AB5A00BC0074 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		30C4EE2A14F6AB5A00BC0074 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		A2A0A5AA151F9DD300D27E0B /* TextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputView.h; sourceTree = "<group>"; };
+		A2A0A5AB151F9DD300D27E0B /* TextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputView.m; sourceTree = "<group>"; };
 		A2B5463D14F4AFB40075405B /* ToolKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKitViewController.h; sourceTree = "<group>"; };
 		A2B5463E14F4AFB40075405B /* ToolKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKitViewController.m; sourceTree = "<group>"; };
 		A2B5464414F547850075405B /* UIView+UIKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIKitCategories.h"; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 				302DE29014F4455200AAB79D /* Acceleration */,
 				A2B5464F14F54B890075405B /* Camera */,
 				302DE29114F4457C00AAB79D /* Location */,
+				A2A0A5A9151F9DB300D27E0B /* Text Input */,
 				3000B58A14F426C00054E59A /* Supporting Files */,
 			);
 			path = ToolKit;
@@ -165,6 +169,15 @@
 				301FBB1A14F428070093161F /* MapKit.framework */,
 			);
 			name = Location;
+			sourceTree = "<group>";
+		};
+		A2A0A5A9151F9DB300D27E0B /* Text Input */ = {
+			isa = PBXGroup;
+			children = (
+				A2A0A5AA151F9DD300D27E0B /* TextInputView.h */,
+				A2A0A5AB151F9DD300D27E0B /* TextInputView.m */,
+			);
+			name = "Text Input";
 			sourceTree = "<group>";
 		};
 		A2B5464F14F54B890075405B /* Camera */ = {
@@ -249,6 +262,7 @@
 				30635C24151B9987009DE521 /* NSString+Base64.m in Sources */,
 				30635C28151B9A4D009DE521 /* NSData+Base64.m in Sources */,
 				30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */,
+				A2A0A5AC151F9DD300D27E0B /* TextInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

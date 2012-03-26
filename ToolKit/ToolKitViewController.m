@@ -10,6 +10,7 @@
 #import "AccelerationView.h"
 #import "GPSView.h"
 #import "CameraView.h"
+#import "TextInputView.h"
 
 @interface ToolKitViewController ()
 @end
@@ -34,6 +35,12 @@
     
     bounds = CGRectMake(bounds.origin.x, y, bounds.size.width, 250);
     [scrollView addSubview:[[GPSView alloc] initWithFrame:bounds]];
+    y += bounds.size.height;
+    
+    bounds = CGRectMake(bounds.origin.x, y, bounds.size.width, 250);
+    [scrollView addSubview:[[TextInputView alloc] initWithFrame:bounds]];
+    y += bounds.size.height;
+    
     
     CGSize contentSize = CGSizeMake(scrollView.frame.size.width, 0);
     for (UIView *view in scrollView.subviews)
