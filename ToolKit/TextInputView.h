@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TextInputView : UIScrollView
+@interface TextInputView : UITableView < UITableViewDelegate, UITableViewDataSource >
 
 @end

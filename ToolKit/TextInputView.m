@@ -7,6 +7,7 @@
 //
 
 #import "TextInputView.h"
+#import "UIView+UIKitCategories.h"
 
 @interface TextInputView ()
 @property (nonatomic, strong) NSArray *textFields;
@@ -20,35 +21,48 @@
     if (self = [super initWithFrame:frame])
     {
         self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        
+        self.delegate = self;
+        self.dataSource = self;
         
         NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
-        NSArray *textBoxes = [bundle objectForKey:@"TextInputTextBoxes"];
-        
-        NSUInteger count = textBoxes.count;
-        NSMutableArray *array = [NSMutableArray arrayWithCapacity:count];
-        
-        CGFloat x = 10;
-        CGFloat y = -30;
-        CGFloat width = frame.size.width - 20;
-        CGFloat height = 40;
-        for (NSString *string in textBoxes) 
-        {
-            y += 10 + height;
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, y, width, height)];
-            label.text            = string;
-            label.textAlignment   = UITextAlignmentCenter;
-            label.textColor       = [UIColor blackColor];
-            label.backgroundColor = self.backgroundColor;
-            [self addSubview:label];
-            
-            y += 10 + height;
-            UITextView *view = [[UITextView alloc] initWithFrame:CGRectMake(x, y, width, height)];
-            [self addSubview:view];
-        }
-        self.textFields = array;
+        self.textFields = [bundle objectForKey:@"TextInputTextBoxes"];
     }
     return self;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return [self.textFields count];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"I really don't understand this.";
+     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) 
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    cell.textLabel.text = [self.textFields objectAtIndex:indexPath.row];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 @end
+
+
+
+
+
