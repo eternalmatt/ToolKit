@@ -10,11 +10,12 @@
 #import "UIView+UIKitCategories.h"
 
 @interface TextInputView ()
-@property (nonatomic, strong) NSArray *textFields;
+@property (nonatomic, strong) NSArray *textLabels;
+@property (nonatomic, strong) NSArray *textInputs;
 @end
 
 @implementation TextInputView
-@synthesize textFields;
+@synthesize textLabels, textInputs;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -25,14 +26,23 @@
         self.dataSource = self;
         
         NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
-        self.textFields = [bundle objectForKey:@"TextInputTextBoxes"];
+        self.textLabels = [bundle objectForKey:@"TextInputTextBoxes"];
+        
+        
+        const CGRect bounds = [[UIScreen mainScreen] bounds];
+        NSMutableArray *array = [NSMutableArray arrayWithCapacity:textLabels.count];
+        for(int i=0; i < textLabels.count; i++)
+        {
+            [array addObject:[[UITextView alloc] initWithFrame:bounds]];
+        }
+        self.textInputs = array;
     }
     return self;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return [self.textFields count];
+    return [self.textLabels count];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -47,17 +57,23 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) 
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    cell.textLabel.text = [self.textFields objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.textLabels objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [[self.textInputs objectAtIndex:indexPath.row] text];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    UIViewController *parent = [self firstAvailableUIViewController];
+    UIViewController *textInputController = [[UIViewController alloc] init];
+    textInputController.title = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
+    UITextView *textView = [self.textInputs objectAtIndex:indexPath.row];
+    [textInputController.view addSubview:textView];
+    [parent.navigationController pushViewController:textInputController animated:YES];
 }
 
 @end
