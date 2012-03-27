@@ -24,6 +24,7 @@
 		30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */; };
 		30BB2C4E150006770027CD29 /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB2C4D150006770027CD29 /* UIImage+ProportionalFill.m */; };
 		30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2914F6AB5A00BC0074 /* CameraView.m */; };
+		30C7F9F71522426400E2F04D /* CyclicArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7F9F61522426400E2F04D /* CyclicArray.m */; };
 		A2A0A5AC151F9DD300D27E0B /* TextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0A5AB151F9DD300D27E0B /* TextInputView.m */; };
 		A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5463E14F4AFB40075405B /* ToolKitViewController.m */; };
 		A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464514F547850075405B /* UIView+UIKitCategories.m */; };
@@ -59,6 +60,8 @@
 		30BB2C4D150006770027CD29 /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ProportionalFill.m"; path = "../../../../Toolkit/Xcode/ToolKit/MGImageUtilities/Classes/UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
 		30C4EE2914F6AB5A00BC0074 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		30C4EE2A14F6AB5A00BC0074 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		30C7F9F51522426400E2F04D /* CyclicArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CyclicArray.h; sourceTree = "<group>"; };
+		30C7F9F61522426400E2F04D /* CyclicArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CyclicArray.m; sourceTree = "<group>"; };
 		A2A0A5AA151F9DD300D27E0B /* TextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputView.h; sourceTree = "<group>"; };
 		A2A0A5AB151F9DD300D27E0B /* TextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputView.m; sourceTree = "<group>"; };
 		A2B5463D14F4AFB40075405B /* ToolKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKitViewController.h; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				30635C23151B9987009DE521 /* NSString+Base64.m */,
 				30635C26151B9A4C009DE521 /* NSData+Base64.h */,
 				30635C27151B9A4C009DE521 /* NSData+Base64.m */,
+				30C7F9F51522426400E2F04D /* CyclicArray.h */,
+				30C7F9F61522426400E2F04D /* CyclicArray.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				30635C28151B9A4D009DE521 /* NSData+Base64.m in Sources */,
 				30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */,
 				A2A0A5AC151F9DD300D27E0B /* TextInputView.m in Sources */,
+				30C7F9F71522426400E2F04D /* CyclicArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
