@@ -11,11 +11,14 @@
 
 @interface TextInputView ()
 @property (nonatomic, strong) NSArray *textLabels;
-@property (nonatomic, strong) NSArray *textInputs;
+@property (nonatomic, strong) NSMutableArray *textInputs;
+@property (nonatomic, strong) UIViewController *textInputController;
+@property (nonatomic, strong, retain)   UITextView *textView;
+@property (nonatomic) NSUInteger row;
 @end
 
 @implementation TextInputView
-@synthesize textLabels, textInputs;
+@synthesize textLabels, textInputs, textInputController, textView, row;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -29,13 +32,29 @@
         self.textLabels = [bundle objectForKey:@"TextInputTextBoxes"];
         
         
-        const CGRect bounds = [[UIScreen mainScreen] bounds];
-        NSMutableArray *array = [NSMutableArray arrayWithCapacity:textLabels.count];
+        self.textInputs = [NSMutableArray arrayWithCapacity:textLabels.count];
         for(int i=0; i < textLabels.count; i++)
-        {
-            [array addObject:[[UITextView alloc] initWithFrame:bounds]];
-        }
-        self.textInputs = array;
+            [self.textInputs addObject:[NSString stringWithFormat:@"%d", i]];
+        
+        
+        self.textInputController = [[UIViewController alloc] init];
+        
+        CGRect bounds = [[UIScreen mainScreen] bounds];
+        
+        UIButton *save = [UIButton buttonWithType:UIButtonTypeRoundedRect];   
+        save.frame = CGRectMake(bounds.origin.x+20, bounds.origin.y+10, bounds.size.width-40, 30);
+        save.titleLabel.textAlignment = UITextAlignmentCenter;
+        [save setTitle:@"Save text" forState:UIControlStateNormal];
+        [save addTarget:self 
+                 action:@selector(saveText) 
+       forControlEvents:UIControlEventTouchUpInside];
+        [textInputController.view addSubview:save];
+         
+        
+        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y+50, bounds.size.width, bounds.size.height-50)];
+        self.textView.font = [UIFont fontWithName:@"Helvetica" size:20];
+        [textInputController.view addSubview:textView];
+        
     }
     return self;
 }
@@ -59,21 +78,33 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.userInteractionEnabled = YES;
     }
     
     cell.textLabel.text = [self.textLabels objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [[self.textInputs objectAtIndex:indexPath.row] text];
+    cell.detailTextLabel.text = [self.textInputs objectAtIndex:indexPath.row];
+    if (indexPath.row == row)
+    {
+        cell.detailTextLabel.text = self.textView.text;
+    }
+    
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *parent = [self firstAvailableUIViewController];
-    UIViewController *textInputController = [[UIViewController alloc] init];
+    self.row = indexPath.row;
     textInputController.title = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
-    UITextView *textView = [self.textInputs objectAtIndex:indexPath.row];
-    [textInputController.view addSubview:textView];
+    textView.text = [self.textInputs objectAtIndex:row];
+    
+    UIViewController *parent = [self firstAvailableUIViewController];
     [parent.navigationController pushViewController:textInputController animated:YES];
+}
+
+-(void)saveText
+{
+    [self.textInputs replaceObjectAtIndex:row withObject:textView.text];
+    [self reloadData];
 }
 
 @end
