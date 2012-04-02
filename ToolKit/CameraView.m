@@ -30,6 +30,12 @@
 @synthesize picker;
 @synthesize cameraButtonText, uploadButtonText, alertWindowSuccessTitle, alertWindowSuccessBody;
 
+-(NSString*)base64Image
+{
+    NSData *data = UIImagePNGRepresentation(self.pickedImage.image);
+    return [NSString base64StringFromData:data length:data.length];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) 

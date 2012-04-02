@@ -15,6 +15,7 @@ typedef enum {
 } GPSButtonType;
 
 @interface GPSView ()
+@property (strong, nonatomic) NSMutableArray *locations;
 @property (strong, nonatomic) NSString *uploadButtonText;
 @property (strong, nonatomic) NSString *actionButtonStartText;
 @property (strong, nonatomic) NSString *actionButtonStopText;
@@ -23,7 +24,12 @@ typedef enum {
 
 @implementation GPSView
 @synthesize label, mapView, locationManager;
-@synthesize uploadButtonText, actionButtonStartText, actionButtonStopText, showMapButtonText;
+@synthesize uploadButtonText, actionButtonStartText, actionButtonStopText, showMapButtonText, locations;
+
+-(NSArray*)GPSLocations
+{
+    return self.locations;
+}
 
 #pragma mark - Initialization
 -(id)initWithFrame:(CGRect)frame
@@ -36,6 +42,7 @@ typedef enum {
         self.actionButtonStopText = [bundle objectForKey:@"ActionButtonStopText"];
         self.showMapButtonText = [bundle objectForKey:@"ShowMapButtonText"];
         
+        self.locations = [NSMutableArray array];
         self.locationManager = [[CLLocationManager alloc] init];        
         self.backgroundColor = [UIColor groupTableViewBackgroundColor];
         
@@ -125,6 +132,7 @@ typedef enum {
 {
     if (newLocation.timestamp.timeIntervalSinceNow < 5.0)
     {
+        [self.locations addObject:newLocation];
         self.label.text = [NSString stringWithFormat:@"GPS: %.5f %.5f\"", newLocation.coordinate.longitude, newLocation.coordinate.latitude];
         
         CLLocationCoordinate2D coordinate = [newLocation coordinate];

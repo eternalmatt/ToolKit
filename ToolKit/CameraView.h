@@ -20,5 +20,6 @@
 @property (strong, nonatomic) UIImagePickerController *picker;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
+-(NSString*)base64Image;
 
 @end

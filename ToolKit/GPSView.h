@@ -16,4 +16,8 @@
 @property (strong, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
+
+//has the type CLLocation*
+-(NSArray*)GPSLocations;
+
 @end

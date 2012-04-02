@@ -20,6 +20,11 @@
 @implementation TextInputView
 @synthesize textLabels, textInputs, textInputController, textView, row;
 
+-(NSArray*)textStringsFromUser
+{
+    return self.textInputs;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame])
@@ -99,6 +104,11 @@
     
     UIViewController *parent = [self firstAvailableUIViewController];
     [parent.navigationController pushViewController:textInputController animated:YES];
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(void)saveText

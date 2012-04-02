@@ -10,4 +10,6 @@
 
 @interface TextInputView : UITableView < UITableViewDelegate, UITableViewDataSource >
 
+-(NSArray*)textStringsFromUser;
+
 @end
