@@ -22,6 +22,11 @@
 		30635C24151B9987009DE521 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C23151B9987009DE521 /* NSString+Base64.m */; };
 		30635C28151B9A4D009DE521 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C27151B9A4C009DE521 /* NSData+Base64.m */; };
 		30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */; };
+		30B3C1E1152B85FB006B4A31 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B3C1D4152B85FB006B4A31 /* DDXMLElementAdditions.m */; };
+		30B3C1E2152B85FB006B4A31 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B3C1D7152B85FB006B4A31 /* NSString+DDXML.m */; };
+		30B3C1E3152B85FB006B4A31 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B3C1DA152B85FB006B4A31 /* DDXMLDocument.m */; };
+		30B3C1E4152B85FB006B4A31 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B3C1DC152B85FB006B4A31 /* DDXMLElement.m */; };
+		30B3C1E5152B85FB006B4A31 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B3C1DE152B85FB006B4A31 /* DDXMLNode.m */; };
 		30BB2C4E150006770027CD29 /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB2C4D150006770027CD29 /* UIImage+ProportionalFill.m */; };
 		30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2914F6AB5A00BC0074 /* CameraView.m */; };
 		30C7F9F71522426400E2F04D /* CyclicArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7F9F61522426400E2F04D /* CyclicArray.m */; };
@@ -54,8 +59,20 @@
 		30635C23151B9987009DE521 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSString+Base64.m"; sourceTree = "<group>"; };
 		30635C26151B9A4C009DE521 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSData+Base64.h"; sourceTree = "<group>"; };
 		30635C27151B9A4C009DE521 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSData+Base64.m"; sourceTree = "<group>"; };
-		30635C29151BA887009DE521 /* ToolKitXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolKitXMLBuilder.h; path = ../../../../Toolkit/Xcode/ToolKit/ToolKit/ToolKitXMLBuilder.h; sourceTree = "<group>"; };
-		30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToolKitXMLBuilder.m; path = ../../../../Toolkit/Xcode/ToolKit/ToolKit/ToolKitXMLBuilder.m; sourceTree = "<group>"; };
+		30635C29151BA887009DE521 /* ToolKitXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKitXMLBuilder.h; sourceTree = "<group>"; };
+		30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKitXMLBuilder.m; sourceTree = "<group>"; };
+		30B3C1D3152B85FB006B4A31 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		30B3C1D4152B85FB006B4A31 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		30B3C1D6152B85FB006B4A31 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
+		30B3C1D7152B85FB006B4A31 /* NSString+DDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDXML.m"; sourceTree = "<group>"; };
+		30B3C1D8152B85FB006B4A31 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		30B3C1D9152B85FB006B4A31 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		30B3C1DA152B85FB006B4A31 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		30B3C1DB152B85FB006B4A31 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		30B3C1DC152B85FB006B4A31 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		30B3C1DD152B85FB006B4A31 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		30B3C1DE152B85FB006B4A31 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		30B3C1E0152B85FB006B4A31 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
 		30BB2C4C150006770027CD29 /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ProportionalFill.h"; path = "../../../../Toolkit/Xcode/ToolKit/MGImageUtilities/Classes/UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
 		30BB2C4D150006770027CD29 /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ProportionalFill.m"; path = "../../../../Toolkit/Xcode/ToolKit/MGImageUtilities/Classes/UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
 		30C4EE2914F6AB5A00BC0074 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
@@ -121,8 +138,6 @@
 				3000B59314F426C00054E59A /* UNCCAppDelegate.m */,
 				A2B5463D14F4AFB40075405B /* ToolKitViewController.h */,
 				A2B5463E14F4AFB40075405B /* ToolKitViewController.m */,
-				30635C29151BA887009DE521 /* ToolKitXMLBuilder.h */,
-				30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */,
 				302DE29014F4455200AAB79D /* Acceleration */,
 				A2B5464F14F54B890075405B /* Camera */,
 				302DE29114F4457C00AAB79D /* Location */,
@@ -135,6 +150,9 @@
 		3000B58A14F426C00054E59A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				30B3C1D1152B85FB006B4A31 /* KissXML */,
+				30635C29151BA887009DE521 /* ToolKitXMLBuilder.h */,
+				30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */,
 				3000B58B14F426C00054E59A /* ToolKit-Info.plist */,
 				3000B58C14F426C00054E59A /* InfoPlist.strings */,
 				3000B58F14F426C00054E59A /* main.m */,
@@ -174,6 +192,49 @@
 				301FBB1A14F428070093161F /* MapKit.framework */,
 			);
 			name = Location;
+			sourceTree = "<group>";
+		};
+		30B3C1D1152B85FB006B4A31 /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				30B3C1D2152B85FB006B4A31 /* Additions */,
+				30B3C1D5152B85FB006B4A31 /* Categories */,
+				30B3C1D8152B85FB006B4A31 /* DDXML.h */,
+				30B3C1D9152B85FB006B4A31 /* DDXMLDocument.h */,
+				30B3C1DA152B85FB006B4A31 /* DDXMLDocument.m */,
+				30B3C1DB152B85FB006B4A31 /* DDXMLElement.h */,
+				30B3C1DC152B85FB006B4A31 /* DDXMLElement.m */,
+				30B3C1DD152B85FB006B4A31 /* DDXMLNode.h */,
+				30B3C1DE152B85FB006B4A31 /* DDXMLNode.m */,
+				30B3C1DF152B85FB006B4A31 /* Private */,
+			);
+			path = KissXML;
+			sourceTree = SOURCE_ROOT;
+		};
+		30B3C1D2152B85FB006B4A31 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				30B3C1D3152B85FB006B4A31 /* DDXMLElementAdditions.h */,
+				30B3C1D4152B85FB006B4A31 /* DDXMLElementAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		30B3C1D5152B85FB006B4A31 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				30B3C1D6152B85FB006B4A31 /* NSString+DDXML.h */,
+				30B3C1D7152B85FB006B4A31 /* NSString+DDXML.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		30B3C1DF152B85FB006B4A31 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				30B3C1E0152B85FB006B4A31 /* DDXMLPrivate.h */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		A2A0A5A9151F9DB300D27E0B /* Text Input */ = {
@@ -222,7 +283,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = 3000B57914F426BF0054E59A /* Build configuration list for PBXProject "ToolKit" */;
+			buildConfigurationList = 3000B57914F426BF0054E59A /* Build configuration list for PBXProject "toolkit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -269,6 +330,11 @@
 				30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */,
 				A2A0A5AC151F9DD300D27E0B /* TextInputView.m in Sources */,
 				30C7F9F71522426400E2F04D /* CyclicArray.m in Sources */,
+				30B3C1E1152B85FB006B4A31 /* DDXMLElementAdditions.m in Sources */,
+				30B3C1E2152B85FB006B4A31 /* NSString+DDXML.m in Sources */,
+				30B3C1E3152B85FB006B4A31 /* DDXMLDocument.m in Sources */,
+				30B3C1E4152B85FB006B4A31 /* DDXMLElement.m in Sources */,
+				30B3C1E5152B85FB006B4A31 /* DDXMLNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +372,9 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -325,8 +393,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -358,7 +428,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3000B57914F426BF0054E59A /* Build configuration list for PBXProject "ToolKit" */ = {
+		3000B57914F426BF0054E59A /* Build configuration list for PBXProject "toolkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3000B59514F426C00054E59A /* Debug */,

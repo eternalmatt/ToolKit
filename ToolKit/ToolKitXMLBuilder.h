@@ -19,6 +19,4 @@
 -(NSString*)generateXML;
 
 
-+(NSString*)createFileWithDictionary:(NSDictionary*)dictionary;
-
 @end

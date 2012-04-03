@@ -11,6 +11,7 @@
 #import "GPSView.h"
 #import "CameraView.h"
 #import "TextInputView.h"
+#import "ToolKitXMLBuilder.h"
 
 @interface ToolKitViewController ()
 @end
@@ -20,6 +21,7 @@
 -(void)loadView
 {
     [super loadView];
+    ToolKitXMLBuilder *builder = [[ToolKitXMLBuilder alloc] init];
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:bounds];

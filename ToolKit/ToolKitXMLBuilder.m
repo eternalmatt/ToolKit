@@ -7,61 +7,71 @@
 //
 
 #import "ToolKitXMLBuilder.h"
+#import "DDXML.h"
+#import "NSString+Base64.h"
+#import <MapKit/MapKit.h>
+
 @interface ToolKitXMLBuilder()
-@property (nonatomic, strong) NSString *xml;
+@property (nonatomic, strong) DDXMLElement *xmlRoot;
 @end
 
 @implementation ToolKitXMLBuilder
-@synthesize xml;
+@synthesize xmlRoot;
 
 -(id)init
 {
     if (self = [super init])
     {
-        self.xml = @"";
+        self.xmlRoot = [DDXMLElement elementWithName:@"ToolKit"];
+        
+        
     }
     return self;
 }
 
 -(void)addAcceleration:(NSArray *)data
-{}
+{
+    DDXMLNode *node = [DDXMLElement elementWithName:@"Acceleration" children:data attributes:nil];
+    [self.xmlRoot addChild:node];
+}
 
 -(void)addCamera:(UIImage *)image
-{}
+{
+    NSData *data = UIImagePNGRepresentation(image);
+    DDXMLElement *node = [DDXMLElement elementWithName:@"Camera"];
+    [node setChildren:[NSArray arrayWithObject:[NSString base64StringFromData:data length:data.length]]];
+    [self.xmlRoot addChild:node];
+}
 
 -(void)addGPS:(NSArray *)data
-{}
-
--(void)addTextInput:(NSArray *)data
-{}
-
-+(NSString*)createFileWithDictionary:(NSDictionary *)dictionary
 {
-    NSMutableString *file = [NSMutableString stringWithCapacity:1024];
-    
-    for (NSString *key in dictionary.allKeys)
+    NSMutableArray *latitudes = [NSMutableArray arrayWithCapacity:data.count];
+    NSMutableArray *longitudes = [NSMutableArray arrayWithCapacity:data.count];
+    for(CLLocation *location in data)
     {
-        [file appendFormat:@"<SubmittedSensor type=\"%@\">%@<\\SubmittedSensor>", key, [dictionary objectForKey:key]];
+        [latitudes addObject:[NSString stringWithFormat:@"%.5f", location.coordinate.latitude]];
+        [longitudes addObject:[NSString stringWithFormat:@"%.5f", location.coordinate.longitude]];
     }
     
-    
-    NSString *head;
-    NSString *end;
-    NSString *xml = [NSString stringWithFormat:@"%@%@%@", head, file, end];
-    NSLog(@"xml is %@", xml);
-    
-    NSArray *pathList = [[NSFileManager defaultManager] URLsForDirectory:NSDownloadsDirectory inDomains:NSUserDomainMask];
-    NSLog(@"Path lists are %@", pathList);
-    NSURL *path = [pathList objectAtIndex:0];
-    
-    path = [path URLByAppendingPathComponent:@"sensor.xml"];
-    
-    
-    NSError *error;
-    NSFileHandle *handle = [NSFileHandle fileHandleForUpdatingURL:path error:&error];
-    [handle writeData:[NSData data]];
-    
-    return xml;
+    DDXMLNode *node = [DDXMLElement elementWithName:@"GPS"
+                                           children:[NSArray arrayWithObjects:latitudes, longitudes, nil]
+                                         attributes:nil];
+    [self.xmlRoot addChild:node];
 }
+
+-(void)addTextInput:(NSArray *)data
+{
+    DDXMLElement *node = [DDXMLElement elementWithName:@"TextInput"];
+    for(NSString *string in data)
+        [node addChild:[DDXMLElement elementWithName:@"Question" stringValue:@"Answer"]];
+    
+    [self.xmlRoot addChild:node];
+}
+
+-(NSString*)generateXML
+{
+    return self.xmlRoot.XMLString;
+}
+
 
 @end
