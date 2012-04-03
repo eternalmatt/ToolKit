@@ -7,8 +7,33 @@
 //
 
 #import "ToolKitXMLBuilder.h"
+@interface ToolKitXMLBuilder()
+@property (nonatomic, strong) NSString *xml;
+@end
 
 @implementation ToolKitXMLBuilder
+@synthesize xml;
+
+-(id)init
+{
+    if (self = [super init])
+    {
+        self.xml = @"";
+    }
+    return self;
+}
+
+-(void)addAcceleration:(NSArray *)data
+{}
+
+-(void)addCamera:(UIImage *)image
+{}
+
+-(void)addGPS:(NSArray *)data
+{}
+
+-(void)addTextInput:(NSArray *)data
+{}
 
 +(NSString*)createFileWithDictionary:(NSDictionary *)dictionary
 {

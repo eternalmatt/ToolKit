@@ -10,6 +10,13 @@
 
 @interface ToolKitXMLBuilder : NSObject
 
+-(id)init;
+-(void)addCamera:(UIImage*)image;
+-(void)addGPS:(NSArray*)data;
+-(void)addTextInput:(NSArray*)data;
+-(void)addAcceleration:(NSArray*)data;
+
+-(NSString*)generateXML;
 
 
 +(NSString*)createFileWithDictionary:(NSDictionary*)dictionary;
