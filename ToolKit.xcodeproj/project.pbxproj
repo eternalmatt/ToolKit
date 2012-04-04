@@ -283,7 +283,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = 3000B57914F426BF0054E59A /* Build configuration list for PBXProject "toolkit" */;
+			buildConfigurationList = 3000B57914F426BF0054E59A /* Build configuration list for PBXProject "ToolKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -409,7 +409,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToolKit/ToolKit-Prefix.pch";
 				INFOPLIST_FILE = "ToolKit/ToolKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -420,7 +422,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToolKit/ToolKit-Prefix.pch";
 				INFOPLIST_FILE = "ToolKit/ToolKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -428,7 +432,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3000B57914F426BF0054E59A /* Build configuration list for PBXProject "toolkit" */ = {
+		3000B57914F426BF0054E59A /* Build configuration list for PBXProject "ToolKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3000B59514F426C00054E59A /* Debug */,

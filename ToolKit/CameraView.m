@@ -15,12 +15,10 @@
 
 @interface CameraView ()
 @property (strong, nonatomic) NSString *cameraButtonText;
-@property (strong, nonatomic) NSString *uploadButtonText;
 @property (strong, nonatomic) NSString *alertWindowSuccessTitle;
 @property (strong, nonatomic) NSString *alertWindowSuccessBody;
 
 -(void)takePicturePressed:(UIButton*)sender;
--(void)uploadPicturePressed:(UIButton*)sender;
 @end
 
 @implementation CameraView
@@ -28,7 +26,7 @@
 @synthesize locationLabel;
 @synthesize pickedImage;
 @synthesize picker;
-@synthesize cameraButtonText, uploadButtonText, alertWindowSuccessTitle, alertWindowSuccessBody;
+@synthesize cameraButtonText, alertWindowSuccessTitle, alertWindowSuccessBody;
 
 -(NSString*)base64Image
 {
@@ -40,8 +38,6 @@
 {
     if (self = [super initWithFrame:frame]) 
     {
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -51,7 +47,6 @@
         
         NSDictionary *bundle         = [[NSBundle mainBundle] infoDictionary];
         self.cameraButtonText        = [bundle objectForKey:@"CameraButtonText"];
-        self.uploadButtonText        = [bundle objectForKey:@"UploadButtonText"];
         self.alertWindowSuccessTitle = [bundle objectForKey:@"AlertWindowSuccessTitle"];
         self.alertWindowSuccessBody  = [bundle objectForKey:@"AlertWindowSuccessBody"];
         
@@ -68,21 +63,7 @@
         takeButton.frame = bounds;
         [takeButton setTitle:self.cameraButtonText forState:UIControlStateNormal];
         [takeButton addTarget:self action:@selector(takePicturePressed:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:takeButton];
-        
-        
-        x = x + width + 10;
-        y = y;
-        width = screen.size.width - (x + 10);
-        height = height;
-        bounds = CGRectMake(x, y, width, height);
-        UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        uploadButton.frame = bounds;
-        uploadButton.titleLabel.numberOfLines = 0;
-        [uploadButton setTitle:self.uploadButtonText forState:UIControlStateNormal];
-        [uploadButton addTarget:self action:@selector(uploadPicturePressed:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:uploadButton];
-        
+        [self addSubview:takeButton];        
         
         
         x = screen.origin.x + 10;
@@ -111,23 +92,6 @@
     [viewcon presentViewController:picker animated:YES completion:nil];
 }
 
--(void)uploadPicturePressed:(UIButton *)sender
-{
-    if (self.pickedImage.image)
-    {        
-        NSData *base64 = UIImagePNGRepresentation(self.pickedImage.image);
-        NSString *string = [NSString base64StringFromData:base64 length:[base64 length]];
-        /* do something with the NSString *string here and upload to server */
-        NSDictionary *dictionary = [NSDictionary dictionaryWithObject:string forKey:@"camera"];
-        
-        [[[UIAlertView alloc] initWithTitle:self.alertWindowSuccessTitle
-                                    message:self.alertWindowSuccessBody
-                                   delegate:nil 
-                          cancelButtonTitle:nil
-                          otherButtonTitles:@"Ok", nil] show];
-    }
-}
-
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
@@ -153,7 +117,8 @@
     [manager stopUpdatingLocation];
 
     CGPoint point = CGPointMake(newLocation.coordinate.longitude, newLocation.coordinate.latitude);
-    NSLog(@"%@", NSStringFromCGPoint(point));}
+    NSLog(@"%@", NSStringFromCGPoint(point));
+}
 
 
 

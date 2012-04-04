@@ -29,7 +29,6 @@
 {
     if (self = [super initWithFrame:frame])
     {
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
         self.delegate = self;
         self.dataSource = self;
         

@@ -16,7 +16,6 @@ typedef enum {
 
 @interface GPSView ()
 @property (strong, nonatomic) NSMutableArray *locations;
-@property (strong, nonatomic) NSString *uploadButtonText;
 @property (strong, nonatomic) NSString *actionButtonStartText;
 @property (strong, nonatomic) NSString *actionButtonStopText;
 @property (strong, nonatomic) NSString *showMapButtonText;
@@ -24,7 +23,7 @@ typedef enum {
 
 @implementation GPSView
 @synthesize label, mapView, locationManager;
-@synthesize uploadButtonText, actionButtonStartText, actionButtonStopText, showMapButtonText, locations;
+@synthesize actionButtonStartText, actionButtonStopText, showMapButtonText, locations;
 
 -(NSArray*)GPSLocations
 {
@@ -37,7 +36,6 @@ typedef enum {
     if (self = [super initWithFrame:frame])
     {
         NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
-        self.uploadButtonText = [bundle objectForKey:@"UploadButtonText"];
         self.actionButtonStartText = [bundle objectForKey:@"ActionButtonStartText"];
         self.actionButtonStopText = [bundle objectForKey:@"ActionButtonStopText"];
         self.showMapButtonText = [bundle objectForKey:@"ShowMapButtonText"];

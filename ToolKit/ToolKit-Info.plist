@@ -62,5 +62,12 @@
 		<string>Testing text box one</string>
 		<string>Testing text box two</string>
 	</array>
+	<key>Sensors</key>
+	<array>
+		<string>Acceleration</string>
+		<string>Camera</string>
+		<string>Location</string>
+		<string>TextInput</string>
+	</array>
 </dict>
 </plist>

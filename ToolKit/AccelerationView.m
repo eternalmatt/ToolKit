@@ -13,10 +13,8 @@ enum { ActionButtonRecording = 0,
 
 @interface AccelerationView ()
 -(void)actionButtonPressed:(id)sender;
--(void)uploadButtonPressed:(id)sender;
 @property (strong, nonatomic) NSString *startButtonText;
 @property (strong, nonatomic) NSString *stopButtonText;
-@property (strong, nonatomic) NSString *uploadButtonText;
 
 @property (strong, nonatomic) GraphView *graphView;
 @property (strong, nonatomic) NSMutableArray *accelerationData;
@@ -26,7 +24,7 @@ enum { ActionButtonRecording = 0,
 @synthesize graphView;
 @synthesize accelerationData;
 @synthesize data;
-@synthesize startButtonText, stopButtonText, uploadButtonText;
+@synthesize startButtonText, stopButtonText;
 
 -(id)initWithFrame:(CGRect)frame
 {
@@ -40,7 +38,6 @@ enum { ActionButtonRecording = 0,
         NSDictionary *bundle    = [[NSBundle mainBundle] infoDictionary];
         self.startButtonText    = [bundle objectForKey:@"ActionButtonStartText"];
         self.stopButtonText     = [bundle objectForKey:@"ActionButtonStopText"];
-        self.uploadButtonText   = [bundle objectForKey:@"UploadButtonText"];
         
         
         /* graphview to display acceleration data */
@@ -64,19 +61,6 @@ enum { ActionButtonRecording = 0,
         [actionButton addTarget:self action:@selector(actionButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:actionButton];
         
-        
-        /* upload button */
-        x = x + width + 10;
-        y = y;
-        width = screen.size.width - (x + 10);
-        height = height;
-        bounds = CGRectMake(x, y, width, height);
-        UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        uploadButton.frame = bounds;
-        uploadButton.titleLabel.numberOfLines = 0;
-        [uploadButton setTitle:self.uploadButtonText forState:UIControlStateNormal];
-        [uploadButton addTarget:self action:@selector(uploadButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:uploadButton];
     }
     return self;
 }
@@ -95,12 +79,6 @@ enum { ActionButtonRecording = 0,
     }
     
     sender.tag = !sender.tag;
-}
-
--(void)uploadButtonPressed:(UIButton*)sender
-{
-    //do something with the acceleration data here.
-    NSLog(@"%@", self.accelerationData);
 }
 
 -(void)accelerometer:(UIAccelerometer *)accelerometer 
