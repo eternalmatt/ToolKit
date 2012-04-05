@@ -15,11 +15,7 @@
 , UINavigationControllerDelegate
 >
 
-@property (strong, nonatomic) UILabel *locationLabel;
-@property (strong, nonatomic) UIImageView *pickedImage;
-@property (strong, nonatomic) UIImagePickerController *picker;
-@property (strong, nonatomic) CLLocationManager *locationManager;
 
--(NSString*)base64Image;
+-(UIImage*)image;
 
 @end

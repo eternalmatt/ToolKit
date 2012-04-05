@@ -26,6 +26,7 @@
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
     
+    /* setting up uploadButton */
     UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     uploadButton.frame = CGRectMake(bounds.origin.x+20, bounds.origin.y+10, bounds.size.width-40, 40);
     
@@ -38,13 +39,19 @@
     
     [self.view addSubview:uploadButton];
     
+    
+    /* creating scrollView */
     bounds.origin.y    += uploadButton.frame.origin.y + uploadButton.frame.size.height + 10;
     bounds.size.height -= bounds.origin.y;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:bounds];
     
+    
+    
+    /* sizes for all views in scrollView*/
     bounds.origin.y = 0;
     bounds.size.height = 250;
     
+    /* looping through bundle for views and adding to scrollView */
     NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
     for(NSString *string in [bundle objectForKey:@"Sensors"])
     {

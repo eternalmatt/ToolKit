@@ -18,6 +18,11 @@
 @property (strong, nonatomic) NSString *alertWindowSuccessTitle;
 @property (strong, nonatomic) NSString *alertWindowSuccessBody;
 
+@property (strong, nonatomic) UILabel *locationLabel;
+@property (strong, nonatomic) UIImageView *pickedImage;
+@property (strong, nonatomic) UIImagePickerController *picker;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 -(void)takePicturePressed:(UIButton*)sender;
 @end
 
@@ -28,13 +33,12 @@
 @synthesize picker;
 @synthesize cameraButtonText, alertWindowSuccessTitle, alertWindowSuccessBody;
 
--(NSString*)base64Image
+-(UIImage*)image
 {
-    NSData *data = UIImagePNGRepresentation(self.pickedImage.image);
-    return [NSString base64StringFromData:data length:data.length];
+    return self.pickedImage.image;
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(const CGRect)frame
 {
     if (self = [super initWithFrame:frame]) 
     {
@@ -45,33 +49,32 @@
         self.picker = [[UIImagePickerController alloc] init];
         self.picker.delegate = self;
         
+        /* reading from bundle for static strings */
         NSDictionary *bundle         = [[NSBundle mainBundle] infoDictionary];
         self.cameraButtonText        = [bundle objectForKey:@"CameraButtonText"];
         self.alertWindowSuccessTitle = [bundle objectForKey:@"AlertWindowSuccessTitle"];
         self.alertWindowSuccessBody  = [bundle objectForKey:@"AlertWindowSuccessBody"];
         
-        
-        const CGRect screen = self.frame;//[[UIScreen mainScreen] bounds];
-        
-        CGFloat x = screen.origin.x + 10;
-        CGFloat width = screen.size.width / 2.0 - 10;
+        /* set up bounds for the take picture button */
+        CGFloat x = frame.origin.x + 10;
+        CGFloat width = frame.size.width / 2.0 - 10;
         CGFloat height = 40;
-        CGFloat y = screen.size.height + screen.origin.y - (x + height);
+        CGFloat y = frame.size.height - height - 10;
         CGRect bounds = CGRectMake(x,y,width,height);
         
+        /* creating the take picture button */
         UIButton *takeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         takeButton.frame = bounds;
         [takeButton setTitle:self.cameraButtonText forState:UIControlStateNormal];
         [takeButton addTarget:self action:@selector(takePicturePressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:takeButton];        
         
-        
-        x = screen.origin.x + 10;
-        y = screen.origin.y + 10;
+        /* creating the imageView where the image will be displayed */
+        x = 10;
+        y = 10;
         width = 0;  //will be determined by image's aspect ratio
-        height = takeButton.frame.origin.y - y - 10;
-        bounds = CGRectMake(x,y,width,height);
-        self.pickedImage = [[UIImageView alloc] initWithFrame:bounds];
+        height = takeButton.frame.origin.y - 10 - y;
+        self.pickedImage = [[UIImageView alloc] initWithFrame:CGRectMake(x,y,width,height)];
         [self addSubview:self.pickedImage];
     }
     return self;
@@ -79,6 +82,7 @@
 
 -(void)takePicturePressed:(UIButton *)sender
 {
+    /* try and select the best media for this device */
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
@@ -86,8 +90,10 @@
     else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum])
         self.picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     
+    /* record location of picture */
     [self.locationManager startUpdatingLocation]; 
     
+    /* present the camera/photo album */
     UIViewController *viewcon = [self firstAvailableUIViewController];
     [viewcon presentViewController:picker animated:YES completion:nil];
 }
@@ -96,15 +102,17 @@
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    CGFloat x = self.pickedImage.frame.origin.x;
-    CGFloat y = self.pickedImage.frame.origin.y;
-    CGFloat height = self.pickedImage.frame.size.height;
-    CGFloat width = height * image.size.width / image.size.height;
+    /* adjust imageView so that the frame has good aspect ratio and in center */
+    CGRect frame = self.pickedImage.frame;
+    frame.size.width = frame.size.height * image.size.width / image.size.height;
     
-    self.pickedImage.frame  = CGRectMake(x,y,width,height);
+    self.pickedImage.frame  = frame;
     self.pickedImage.center = CGPointMake(self.center.x, self.pickedImage.center.y);
-    self.pickedImage.image  = [image imageScaledToFitSize:CGSizeMake(width, height)];
     
+    
+    /* imageScaledtoFitSize: method from Matt Gemmell's UIImage category */
+    self.pickedImage.image  = [image imageScaledToFitSize:frame.size];
+
     
     UIViewController *viewcon = [self firstAvailableUIViewController];
     [viewcon dismissModalViewControllerAnimated:YES];
