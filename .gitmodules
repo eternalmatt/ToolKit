@@ -1,3 +1,9 @@
 [submodule "asi-http-request"]
 	path = asi-http-request
 	url = git@github.com:pokeb/asi-http-request.git
+[submodule "KissXML"]
+	path = KissXML
+	url = git@github.com:robbiehanson/KissXML.git
+[submodule "MGImageUtilities"]
+	path = MGImageUtilities
+	url = git@github.com:mattgemmell/MGImageUtilities.git
