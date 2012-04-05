@@ -14,10 +14,12 @@
 #import "ToolKitXMLBuilder.h"
 
 @interface ToolKitViewController ()
+@property (nonatomic, strong) UIScrollView *scrollView;
 -(void)uploadButtonPressed:(UIButton*)sender;
 @end
 
 @implementation ToolKitViewController
+@synthesize scrollView;
 
 -(void)loadView
 {
@@ -43,7 +45,7 @@
     /* creating scrollView */
     bounds.origin.y    += uploadButton.frame.origin.y + uploadButton.frame.size.height + 10;
     bounds.size.height -= bounds.origin.y;
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:bounds];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:bounds];
     
     
     
@@ -71,25 +73,49 @@
         
         if (view) 
         {
-            [scrollView addSubview:view];
+            [self.scrollView addSubview:view];
             bounds.origin.y += view.frame.size.height;
         }
     }
     
-    CGSize contentSize = CGSizeMake(scrollView.frame.size.width, 0);
-    for (UIView *view in scrollView.subviews)
+    CGSize contentSize = CGSizeMake(self.scrollView.frame.size.width, 0);
+    for (UIView *view in self.scrollView.subviews)
     {
         contentSize.height += view.frame.size.height;
     }
     
     scrollView.contentSize = contentSize;
-    [self.view addSubview:scrollView];
+    [self.view addSubview:self.scrollView];
 }
 
 -(void)uploadButtonPressed:(UIButton*)sender
 {
     ToolKitXMLBuilder *builder = [[ToolKitXMLBuilder alloc] init];
-    NSLog(@"%@", builder.generateXML);
+    for(UIView *view in self.scrollView.subviews)
+    {
+        if ([view isKindOfClass:[CameraView class]])
+        {
+            CameraView *v = (CameraView*)view;
+            [builder addCamera:v.image];
+        }
+        else if ([view isKindOfClass:[AccelerationView class]])
+        {
+            AccelerationView *v = (AccelerationView*)view;
+            [builder addAcceleration:v.data];
+        }
+        else if ([view isKindOfClass:[GPSView class]])
+        {
+            GPSView *v = (GPSView*)view;
+            [builder addGPS:v.GPSLocations];
+        }
+        else if ([view isKindOfClass:[TextInputView class]])
+        {
+            TextInputView *v = (TextInputView*)view;
+            [builder addTextInput:v.textStringsFromUser];
+        }
+        NSLog(@"%@", builder.generateXML);
+    }
+    
 }
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

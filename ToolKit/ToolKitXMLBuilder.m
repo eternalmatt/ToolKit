@@ -31,20 +31,27 @@
 
 -(void)addAcceleration:(NSArray *)data
 {
+    if (nil == data) return;
+    
     DDXMLNode *node = [DDXMLElement elementWithName:@"Acceleration" children:data attributes:nil];
     [self.xmlRoot addChild:node];
 }
 
 -(void)addCamera:(UIImage *)image
 {
+    if (nil == image) return;
+    
     NSData *data = UIImagePNGRepresentation(image);
-    DDXMLElement *node = [DDXMLElement elementWithName:@"Camera"];
-    [node setChildren:[NSArray arrayWithObject:[NSString base64StringFromData:data length:data.length]]];
+    NSString *string = [NSString base64StringFromData:data length:data.length];
+    
+    DDXMLElement *node = [DDXMLElement elementWithName:@"Camera" stringValue:string];
     [self.xmlRoot addChild:node];
 }
 
 -(void)addGPS:(NSArray *)data
 {
+    if (nil == data) return;
+    
     NSMutableArray *latitudes = [NSMutableArray arrayWithCapacity:data.count];
     NSMutableArray *longitudes = [NSMutableArray arrayWithCapacity:data.count];
     for(CLLocation *location in data)
@@ -53,14 +60,19 @@
         [longitudes addObject:[NSString stringWithFormat:@"%.5f", location.coordinate.longitude]];
     }
     
-    DDXMLNode *node = [DDXMLElement elementWithName:@"GPS"
-                                           children:[NSArray arrayWithObjects:latitudes, longitudes, nil]
-                                         attributes:nil];
+    DDXMLElement *node = [DDXMLElement elementWithName:@"GPS"];
+    DDXMLElement *latNode = [DDXMLElement elementWithName:@"Latitude" stringValue:[latitudes description]];
+    DDXMLElement *lonNode = [DDXMLElement elementWithName:@"Longitude" stringValue:[longitudes description]];
+    
+    [node addChild:latNode];
+    [node addChild:lonNode];
     [self.xmlRoot addChild:node];
 }
 
 -(void)addTextInput:(NSArray *)data
 {
+    if (nil == data) return;
+    
     DDXMLElement *node = [DDXMLElement elementWithName:@"TextInput"];
     for(NSString *string in data)
         [node addChild:[DDXMLElement elementWithName:@"Question" stringValue:@"Answer"]];
