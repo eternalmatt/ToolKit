@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DDXML.h"
+
 
 @interface ToolKitXMLBuilder : NSObject
 
@@ -17,6 +19,5 @@
 -(void)addAcceleration:(NSArray*)data;
 
 -(NSString*)generateXML;
-
 
 @end

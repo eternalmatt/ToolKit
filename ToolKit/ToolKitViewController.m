@@ -52,7 +52,9 @@
     /* sizes for all views in scrollView*/
     bounds.origin.y = 0;
     bounds.size.height = 250;
-    
+    CGSize smallSize    = CGSizeMake(bounds.size.width, 190);
+    CGSize standardSize = CGSizeMake(bounds.size.width, 250);
+
     /* looping through bundle for views and adding to scrollView */
     NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
     for(NSString *string in [bundle objectForKey:@"Sensors"])
@@ -62,22 +64,27 @@
         if      ([string isEqualToString:@"Acceleration"])
             view = [[AccelerationView alloc] initWithFrame:bounds];
         else if ([string isEqualToString:@"Camera"])
+        {
+            bounds.size = smallSize;
             view = [[CameraView alloc] initWithFrame:bounds];
+        }
         else if ([string isEqualToString:@"Location"])
             view = [[GPSView alloc] initWithFrame:bounds];
         else if ([string isEqualToString:@"TextInput"])
             view = [[TextInputView alloc] initWithFrame:bounds];
         
         
-        view.backgroundColor = self.view.backgroundColor;
         
         if (view) 
         {
+            view.backgroundColor = self.view.backgroundColor;
             [self.scrollView addSubview:view];
             bounds.origin.y += view.frame.size.height;
+            bounds.size      = standardSize;
         }
     }
     
+    /* determining size of ths scrollview and adding it to self.view */
     CGSize contentSize = CGSizeMake(self.scrollView.frame.size.width, 0);
     for (UIView *view in self.scrollView.subviews)
     {

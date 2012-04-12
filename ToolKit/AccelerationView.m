@@ -22,7 +22,7 @@ enum { ActionButtonRecording = 0,
 
 @implementation AccelerationView
 @synthesize graphView;
-@synthesize accelerationData;
+@synthesize accelerationData = _accelerationData;
 @synthesize data;
 @synthesize startButtonText, stopButtonText;
 
@@ -84,8 +84,7 @@ enum { ActionButtonRecording = 0,
 -(void)accelerometer:(UIAccelerometer *)accelerometer 
        didAccelerate:(UIAcceleration *)acceleration
 {
-    //why is the compiler complaining about this line???
-    //[self.accelerationData addObject:acceleration];
+    [self.accelerationData addObject:acceleration];
     [self.graphView addX:acceleration.x y:acceleration.y z:acceleration.z];
 }
 

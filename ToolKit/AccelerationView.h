@@ -13,9 +13,9 @@
 < UIAccelerometerDelegate >
 {
     @private
-    NSMutableArray *accelerationData;
+    NSMutableArray *_accelerationData;
 }
 
-@property (weak, nonatomic, readonly, getter=accelerationData) NSArray *data;
+@property (weak, nonatomic, readonly, getter=_accelerationData) NSArray *data;
 
 @end
