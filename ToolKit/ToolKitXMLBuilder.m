@@ -135,54 +135,78 @@
 {
     if (nil == data) return;
     
-    NSString *precision = @"%.5f";
-    NSMutableArray *latitudes = [NSMutableArray arrayWithCapacity:data.count];
-    NSMutableArray *longitudes = [NSMutableArray arrayWithCapacity:data.count];
-    for(CLLocation *location in data)
+    NSString *format = @", %.5f";
+    NSMutableString *latitudes  = [NSMutableString stringWithCapacity:data.count];
+    NSMutableString *longitudes = [NSMutableString stringWithCapacity:data.count];
+    for(int i=0; i < data.count; i++)
     {
-        [latitudes addObject:[NSString stringWithFormat:precision, location.coordinate.latitude]];
-        [longitudes addObject:[NSString stringWithFormat:precision, location.coordinate.longitude]];
+        CLLocation *location = [data objectAtIndex:i];
+        if (i == 0)
+        {
+            [latitudes  appendFormat:@"%.5f", location.coordinate.latitude];
+            [longitudes appendFormat:@"%.5f", location.coordinate.longitude];
+        }else
+        {
+            [latitudes  appendFormat:format, location.coordinate.latitude];
+            [longitudes appendFormat:format, location.coordinate.longitude];
+        }
     }
     
-    DDXMLElement *node = [DDXMLElement elementWithName:@"GPS"];
-    DDXMLElement *latNode = [DDXMLElement elementWithName:@"Latitude" stringValue:[latitudes description]];
-    DDXMLElement *lonNode = [DDXMLElement elementWithName:@"Longitude" stringValue:[longitudes description]];
+    DDXMLElement *root = [ToolKitXMLBuilder basicRoot];
+    DDXMLElement *latNode = [DDXMLElement elementWithName:@"DataType" stringValue:latitudes];
+    [latNode addAttribute:[DDXMLNode attributeWithName:@"name" stringValue:@"Latitude"]];
+    [root addChild:latNode];
     
-    [node addChild:latNode];
-    [node addChild:lonNode];
-    [self.xmlRoot addChild:node];
+    DDXMLElement *lonNode = [DDXMLElement elementWithName:@"DataType" stringValue:longitudes];
+    [lonNode addAttribute:[DDXMLNode attributeWithName:@"name" stringValue:@"Longitude"]];
+    [root addChild:lonNode];
+    
+    
+    
+    /* need to package root into a base64 XML file here and then put into fileNode */
+    
+    DDXMLElement *fileNode = [DDXMLElement elementWithName:@"SubmittedSensor"];
+    [fileNode setStringValue:@"the base 64 string goes here"];
+    [fileNode addAttribute:[DDXMLNode attributeWithName:@"type"     stringValue:@"text"]];
+    [fileNode addAttribute:[DDXMLNode attributeWithName:@"fileName" stringValue:@"someFileName.xml"]];
+    
+    /* this will after do for now until I figure out xml -> file -> base64 */
+    [fileNode addChild:root];
+    
+    
+    [self.files addChild:fileNode];
 }
 
 -(void)addTextInput:(NSArray *)data
 {
     if (nil == data) return;
-    DDXMLElement *root = [ToolKitXMLBuilder basicRoot];
     
-    DDXMLElement *node = [DDXMLElement elementWithName:@"SubmittedSensor"];
-    /*DDXMLElement *node = [DDXMLElement elementWithName:@"SubmittedSensor"
-                                              children:nil
-                                            attributes:[NSArray arrayWithObjects:
-                                                        [DDXMLNode attributeWithName:@"type" stringValue:@"text"],
-                                                        [DDXMLNode attributeWithName:@"fileName" stringValue:@"none.xml"]
-                                                         , nil]];
-    */
+    DDXMLElement *root = [ToolKitXMLBuilder basicRoot];
     NSArray *questionArray = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"TextInputTextBoxes"];
     for(int i=0; i < data.count; i++)
     {
         NSString *question = [questionArray objectAtIndex:i];
         NSString *answer = [data objectAtIndex:i];
-        DDXMLElement *element = [DDXMLElement elementWithName:@"DataType" 
-                                                  stringValue:answer];
         
-        [element addAttribute:[DDXMLNode attributeWithName:@"name" 
-                                               stringValue:question]];
+        DDXMLElement *element = [DDXMLElement elementWithName:@"DataType"];
+        [element addAttribute:[DDXMLNode attributeWithName:@"name" stringValue:question]];
+        [element setStringValue:answer];
         
-        [node addChild:element];
+        [root addChild:element];
     }
-    [root addChild:node];
     
+    /* need to package root into a base64 XML file here and then put into fileNode */
     
-    [self.files addChild:root];
+    DDXMLElement *fileNode = [DDXMLElement elementWithName:@"SubmittedSensor"];
+    [fileNode setStringValue:@"the base 64 string goes here"];
+    [fileNode addAttribute:[DDXMLNode attributeWithName:@"type"     stringValue:@"text"]];
+    [fileNode addAttribute:[DDXMLNode attributeWithName:@"fileName" stringValue:@"someFileName.xml"]];
+    
+    /* this will after do for now until I figure out xml -> file -> base64 */
+    [fileNode addChild:root];
+                        
+    
+    [self.files addChild:fileNode];
 }
 
 -(NSString*)generateXML
