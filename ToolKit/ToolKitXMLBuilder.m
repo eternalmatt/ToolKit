@@ -86,15 +86,24 @@
 {
     if (nil == data) return;
     
-    NSString *precision = @"%.5f";
+    NSString *precision = @", %.5f";
     NSMutableString *xs = [NSMutableString stringWithCapacity:data.count];
     NSMutableString *ys = [NSMutableString stringWithCapacity:data.count];
     NSMutableString *zs = [NSMutableString stringWithCapacity:data.count];
-    for(UIAcceleration* acceleration in data)
+    for(int i=0; i < data.count; i++)
     {
-        [xs appendFormat:precision, acceleration.x];
-        [ys appendFormat:precision, acceleration.y];
-        [zs appendFormat:precision, acceleration.z];
+        UIAcceleration* acceleration = [data objectAtIndex:i];
+        if (i == 0)
+        {
+            [xs appendFormat:@"%.5f", acceleration.x];
+            [ys appendFormat:@"%.5f", acceleration.y];
+            [zs appendFormat:@"%.5f", acceleration.z];
+        }else
+        {
+            [xs appendFormat:precision, acceleration.x];
+            [ys appendFormat:precision, acceleration.y];
+            [zs appendFormat:precision, acceleration.z];
+        }
     }
     
     DDXMLElement *xsNode = [DDXMLElement elementWithName:@"X" stringValue:xs];

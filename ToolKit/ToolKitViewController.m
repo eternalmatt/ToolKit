@@ -12,6 +12,7 @@
 #import "CameraView.h"
 #import "TextInputView.h"
 #import "ToolKitXMLBuilder.h"
+#import "IncentivesViewController.h"
 
 @interface ToolKitViewController ()
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -24,6 +25,15 @@
 -(void)loadView
 {
     [super loadView];
+    
+    
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Incentives"
+                                                               style:UIBarButtonItemStyleBordered
+                                                              target:self 
+                                                              action:@selector(showIncentives:)];
+    self.navigationItem.rightBarButtonItem = button;
+    
+    
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
@@ -93,6 +103,12 @@
     
     scrollView.contentSize = contentSize;
     [self.view addSubview:self.scrollView];
+}
+
+-(void)showIncentives:(UIBarButtonItem*)button
+{
+    IncentivesViewController *viewcon = [[IncentivesViewController alloc] init];
+    [self.navigationController pushViewController:viewcon animated:YES];
 }
 
 -(void)uploadButtonPressed:(UIButton*)sender
