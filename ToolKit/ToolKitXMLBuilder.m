@@ -118,6 +118,7 @@
     DDXMLElement *root = [ToolKitXMLBuilder basicRoot];
     [root addChild:node];
     
+    /* xml string -> file -> base 64 -> xml string */
     NSString *filePath = [self writeToFile:@"acceleration" withString:[root XMLString]];
     NSFileManager *manager = [[NSFileManager alloc] init];
     NSData *fileData = [manager contentsAtPath:filePath];

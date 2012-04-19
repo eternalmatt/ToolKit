@@ -10,4 +10,6 @@
 
 @interface IncentivesViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UILabel *pointsLabel;
+
 @end

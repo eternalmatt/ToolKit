@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CameraView.h"
 
 @interface ToolKitViewController : UIViewController
+< CameraViewDelegate >
 
 @end

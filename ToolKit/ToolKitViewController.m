@@ -15,19 +15,23 @@
 #import "IncentivesViewController.h"
 
 @interface ToolKitViewController ()
+@property (nonatomic) NSInteger startTime, endTime;
+@property (nonatomic, strong) NSMutableArray *imageArray;
+
 @property (nonatomic, strong) UIScrollView *scrollView;
+-(void)showIncentives:(UIBarButtonItem*)button;
 -(void)uploadButtonPressed:(UIButton*)sender;
 @end
 
 @implementation ToolKitViewController
-@synthesize scrollView;
+@synthesize scrollView, startTime, endTime, imageArray;
 
 -(void)loadView
 {
     [super loadView];
-    
-    
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Incentives"
+    NSString *title = [NSString stringWithFormat:@"Points"];
+
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:title
                                                                style:UIBarButtonItemStyleBordered
                                                               target:self 
                                                               action:@selector(showIncentives:)];
@@ -139,6 +143,14 @@
         NSLog(@"%@", builder.generateXML);
     }
     
+}
+
+-(void)imageTaken:(UIImage *)image
+{
+    if (nil == imageArray)
+        self.imageArray = [[NSMutableArray alloc] init];
+    
+    [self.imageArray addObject:image];
 }
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
