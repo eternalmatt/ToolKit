@@ -13,6 +13,7 @@
 #import "TextInputView.h"
 #import "ToolKitXMLBuilder.h"
 #import "IncentivesViewController.h"
+#import "ASIHTTPRequest.h"
 
 @interface ToolKitViewController ()
 @property (nonatomic) NSInteger startTime, endTime;
@@ -142,6 +143,31 @@
         }
         NSLog(@"%@", builder.generateXML);
     }
+    
+    //get a valid path to documents directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    //make a file name to write the data to using the documents directory:
+    NSString *fileNameWithPath = [NSString stringWithFormat:@"%@/%@.xml", 
+                                  documentsDirectory, [[NSDate date] description]];
+    
+
+    //save xml string to the documents directory
+    NSString *xmlString = builder.generateXML;    
+    [xmlString writeToFile:fileNameWithPath
+                atomically:YES
+                  encoding:NSStringEncodingConversionAllowLossy 
+                     error:nil];
+    
+    //create a request and send file to server
+    NSURL *url = [NSURL URLWithString:@"www.google.com"];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request setShouldStreamPostDataFromDisk:YES];
+	[request setRequestMethod:@"PUT"];
+	[request setUploadProgressDelegate:self];
+	[request appendPostDataFromFile:fileNameWithPath];
+	[request startSynchronous];
     
 }
 
