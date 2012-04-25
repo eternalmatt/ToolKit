@@ -23,8 +23,12 @@ enum { ActionButtonRecording = 0,
 @implementation AccelerationView
 @synthesize graphView;
 @synthesize accelerationData = _accelerationData;
-@synthesize data;
 @synthesize startButtonText, stopButtonText;
+
+-(NSArray*)data
+{
+    return _accelerationData;
+}
 
 -(id)initWithFrame:(CGRect)frame
 {

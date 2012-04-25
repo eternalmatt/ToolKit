@@ -59,15 +59,6 @@
 
 // Functions used to draw all content
 
-CGColorRef CreateDeviceGrayColor(CGFloat,CGFloat);
-CGColorRef CreateDeviceRGBColor(CGFloat r, CGFloat g, CGFloat b, CGFloat a);
-CGColorRef graphBackgroundColor(void);
-CGColorRef graphLineColor(void);
-CGColorRef graphXColor(void);
-CGColorRef graphYColor(void);
-CGColorRef graphZColor(void);
-void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width);
-
 CGColorRef CreateDeviceGrayColor(CGFloat w, CGFloat a)
 {
 	CGColorSpaceRef gray = CGColorSpaceCreateDeviceGray();
@@ -207,6 +198,11 @@ void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width)
 	return self;
 }
 
+-(void)dealloc
+{
+	[layer release];
+	[super dealloc];
+}
 
 -(void)reset
 {
@@ -354,9 +350,9 @@ void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width)
 @interface GraphView()
 
 // Internal accessors
-@property(nonatomic, strong) NSMutableArray *segments;
-@property(nonatomic, weak) GraphViewSegment *current;
-@property(nonatomic, weak) GraphTextView *text;
+@property(nonatomic, retain) NSMutableArray *segments;
+@property(nonatomic, assign) GraphViewSegment *current;
+@property(nonatomic, assign) GraphTextView *text;
 
 // A common init routine for use with -initWithFrame: and -initWithCoder:
 -(void)commonInit;
@@ -371,7 +367,7 @@ void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width)
 
 @implementation GraphView
 
-@synthesize segments, current, text = _text;
+@synthesize segments, current, text;
 
 // Designated initializer
 -(id)initWithFrame:(CGRect)frame
@@ -399,8 +395,9 @@ void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width)
 {
 	// Create the text view and add it as a subview. We keep a weak reference
 	// to that view afterwards for laying out the segment layers.
-	self.text = [[GraphTextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 32.0, 112.0)];
-	[self addSubview:self.text];
+	text = [[GraphTextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 32.0, 112.0)];
+	[self addSubview:text];
+	[text release];
 	
 	// Create a mutable array to store segments, which is required by -addSegment
 	segments = [[NSMutableArray alloc] init];
@@ -410,6 +407,13 @@ void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width)
 	current = [self addSegment];
 }
 
+-(void)dealloc
+{
+	// Since 'text' and 'current' are weak references, we do not release them here.
+	// [super dealloc] will take care to release 'text' as a subview, and releasing 'segments' will release 'current'.
+	[segments release];
+	[super dealloc];
+}
 
 -(void)addX:(UIAccelerationValue)x y:(UIAccelerationValue)y z:(UIAccelerationValue)z
 {
@@ -447,11 +451,11 @@ void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width)
 	// to be at the end of the array. As long as we always insert the youngest segment at the front
 	// this will be true.
 	[segments insertObject:segment atIndex:0];
-	 // this is now a weak reference
+	[segment release]; // this is now a weak reference
 	
 	// Ensure that newly added segment layers are placed after the text view's layer so that the text view
 	// always renders above the segment layer.
-	[self.layer insertSublayer:segment.layer below:self.text.layer];
+	[self.layer insertSublayer:segment.layer below:text.layer];
 	// Position it properly (see the comment for kSegmentInitialPosition)
 	segment.layer.position = kSegmentInitialPosition;
 	

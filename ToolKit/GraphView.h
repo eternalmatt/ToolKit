@@ -53,7 +53,7 @@
 @interface GraphView : UIView
 {
 	NSMutableArray *segments;
-	GraphViewSegment *__weak current; // weak reference
+	GraphViewSegment *current; // weak reference
 	GraphTextView *text; // weak reference
 }
 

@@ -17,7 +17,6 @@
 		301FBB1B14F428070093161F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB1A14F428070093161F /* MapKit.framework */; };
 		301FBB2114F4295C0093161F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB2014F4295C0093161F /* CoreLocation.framework */; };
 		302DE28514F4420E00AAB79D /* AccelerationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DE28414F4420E00AAB79D /* AccelerationView.m */; };
-		302DE28D14F4448E00AAB79D /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DE28C14F4448E00AAB79D /* GraphView.m */; };
 		302DE28F14F444D200AAB79D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302DE28E14F444D200AAB79D /* QuartzCore.framework */; };
 		30635C24151B9987009DE521 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C23151B9987009DE521 /* NSString+Base64.m */; };
 		30635C28151B9A4D009DE521 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C27151B9A4C009DE521 /* NSData+Base64.m */; };
@@ -57,6 +56,7 @@
 		308D88E71546F92900A39754 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 308D88E61546F92900A39754 /* libxml2.dylib */; };
 		30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2914F6AB5A00BC0074 /* CameraView.m */; };
 		30C7F9F71522426400E2F04D /* CyclicArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7F9F61522426400E2F04D /* CyclicArray.m */; };
+		30E6D05F15488C0B0018E334 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6D05E15488C0B0018E334 /* GraphView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		30F2E4D915347DE6008FAE1B /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E4D815347DE6008FAE1B /* UIImage+ProportionalFill.m */; };
 		30F2E4EB15347E0D008FAE1B /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E4DE15347E0D008FAE1B /* DDXMLElementAdditions.m */; };
 		30F2E4EC15347E0D008FAE1B /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E4E115347E0D008FAE1B /* NSString+DDXML.m */; };
@@ -85,8 +85,6 @@
 		301FBB2014F4295C0093161F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		302DE28314F4420E00AAB79D /* AccelerationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerationView.h; sourceTree = "<group>"; };
 		302DE28414F4420E00AAB79D /* AccelerationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerationView.m; sourceTree = "<group>"; };
-		302DE28B14F4448E00AAB79D /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
-		302DE28C14F4448E00AAB79D /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 		302DE28E14F444D200AAB79D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		30635C22151B9987009DE521 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Base64.h"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSString+Base64.h"; sourceTree = "<group>"; };
 		30635C23151B9987009DE521 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSString+Base64.m"; sourceTree = "<group>"; };
@@ -160,6 +158,8 @@
 		30C4EE2A14F6AB5A00BC0074 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
 		30C7F9F51522426400E2F04D /* CyclicArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CyclicArray.h; sourceTree = "<group>"; };
 		30C7F9F61522426400E2F04D /* CyclicArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CyclicArray.m; sourceTree = "<group>"; };
+		30E6D05D15488C0B0018E334 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		30E6D05E15488C0B0018E334 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 		30F2E4D715347DD8008FAE1B /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ProportionalFill.h"; path = "MGImageUtilities/Classes/UIImage+ProportionalFill.h"; sourceTree = SOURCE_ROOT; };
 		30F2E4D815347DE6008FAE1B /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ProportionalFill.m"; path = "MGImageUtilities/Classes/UIImage+ProportionalFill.m"; sourceTree = SOURCE_ROOT; };
 		30F2E4DD15347E0D008FAE1B /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
@@ -280,8 +280,8 @@
 			children = (
 				302DE28314F4420E00AAB79D /* AccelerationView.h */,
 				302DE28414F4420E00AAB79D /* AccelerationView.m */,
-				302DE28B14F4448E00AAB79D /* GraphView.h */,
-				302DE28C14F4448E00AAB79D /* GraphView.m */,
+				30E6D05D15488C0B0018E334 /* GraphView.h */,
+				30E6D05E15488C0B0018E334 /* GraphView.m */,
 				302DE28E14F444D200AAB79D /* QuartzCore.framework */,
 			);
 			name = Acceleration;
@@ -553,7 +553,6 @@
 				3000B59414F426C00054E59A /* UNCCAppDelegate.m in Sources */,
 				301FBB1814F427D50093161F /* GPSView.m in Sources */,
 				302DE28514F4420E00AAB79D /* AccelerationView.m in Sources */,
-				302DE28D14F4448E00AAB79D /* GraphView.m in Sources */,
 				A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */,
 				A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */,
 				30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */,
@@ -592,6 +591,7 @@
 				308D88C01546F5DF00A39754 /* ASIS3Request.m in Sources */,
 				308D88C11546F5DF00A39754 /* ASIS3ServiceRequest.m in Sources */,
 				308D88D91546F6E500A39754 /* Reachability.m in Sources */,
+				30E6D05F15488C0B0018E334 /* GraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +666,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToolKit/ToolKit-Prefix.pch";
 				INFOPLIST_FILE = "ToolKit/ToolKit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -679,7 +679,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToolKit/ToolKit-Prefix.pch";
 				INFOPLIST_FILE = "ToolKit/ToolKit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
