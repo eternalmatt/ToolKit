@@ -30,6 +30,8 @@
 -(void)loadView
 {
     [super loadView];
+    NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
+    
     NSString *title = [NSString stringWithFormat:@"Points"];
 
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:title
@@ -37,8 +39,6 @@
                                                               target:self 
                                                               action:@selector(showIncentives:)];
     self.navigationItem.rightBarButtonItem = button;
-    
-    
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
@@ -47,7 +47,7 @@
     UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     uploadButton.frame = CGRectMake(bounds.origin.x+20, bounds.origin.y+10, bounds.size.width-40, 40);
     
-    [uploadButton setTitle:@"Upload to Campaign" 
+    [uploadButton setTitle:[bundle objectForKey:@"UploadButtonText"]
                   forState:UIControlStateNormal];
     
     [uploadButton addTarget:self 
@@ -71,7 +71,6 @@
     CGSize standardSize = CGSizeMake(bounds.size.width, 250);
 
     /* looping through bundle for views and adding to scrollView */
-    NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
     for(NSString *string in [bundle objectForKey:@"Sensors"])
     {
         NSLog(@"%@", string);

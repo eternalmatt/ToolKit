@@ -61,11 +61,11 @@
 
 CGColorRef CreateDeviceGrayColor(CGFloat w, CGFloat a);
 CGColorRef CreateDeviceRGBColor(CGFloat r, CGFloat g, CGFloat b, CGFloat a);
-CGColorRef graphBackgroundColor();
-CGColorRef graphLineColor();
-CGColorRef graphXColor();
-CGColorRef graphYColor();
-CGColorRef graphZColor();
+CGColorRef graphBackgroundColor(void);
+CGColorRef graphLineColor(void);
+CGColorRef graphXColor(void);
+CGColorRef graphYColor(void);
+CGColorRef graphZColor(void);
 void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width);
 
 @end

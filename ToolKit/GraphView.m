@@ -78,7 +78,7 @@ CGColorRef CreateDeviceRGBColor(CGFloat r, CGFloat g, CGFloat b, CGFloat a)
 	return color;
 }
 
-CGColorRef graphBackgroundColor()
+CGColorRef graphBackgroundColor(void)
 {
 	static CGColorRef c = NULL;
 	if(c == NULL)
@@ -88,7 +88,7 @@ CGColorRef graphBackgroundColor()
 	return c;
 }
 
-CGColorRef graphLineColor()
+CGColorRef graphLineColor(void)
 {
 	static CGColorRef c = NULL;
 	if(c == NULL)
@@ -98,7 +98,7 @@ CGColorRef graphLineColor()
 	return c;
 }
 
-CGColorRef graphXColor()
+CGColorRef graphXColor(void)
 {
 	static CGColorRef c = NULL;
 	if(c == NULL)
@@ -108,7 +108,7 @@ CGColorRef graphXColor()
 	return c;
 }
 
-CGColorRef graphYColor()
+CGColorRef graphYColor(void)
 {
 	static CGColorRef c = NULL;
 	if(c == NULL)
@@ -118,7 +118,7 @@ CGColorRef graphYColor()
 	return c;
 }
 
-CGColorRef graphZColor()
+CGColorRef graphZColor(void)
 {
 	static CGColorRef c = NULL;
 	if(c == NULL)
