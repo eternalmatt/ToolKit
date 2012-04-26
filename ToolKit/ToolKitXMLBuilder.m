@@ -35,6 +35,7 @@
     [root addChild:[DDXMLNode elementWithName:@"submittinguser" 
                                      children:nil
                                    attributes:[NSArray arrayWithObject:attribute]]];
+    
     return root;
 }
 
@@ -125,7 +126,7 @@
     NSString *string = [NSString base64StringFromData:fileData length:fileData.length];
     
     DDXMLElement *child = [DDXMLElement elementWithName:@"acceleration" stringValue:string];
-    [child addAttribute:[DDXMLElement elementWithName:@"attribute"]];
+    [child addAttribute:[DDXMLElement attributeWithName:@"attribute" stringValue:@"lol"]];
     
     [self.files addChild:child];
 }

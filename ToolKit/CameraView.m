@@ -95,7 +95,8 @@
     
     /* present the camera/photo album */
     UIViewController *viewcon = [self firstAvailableUIViewController];
-    [viewcon presentViewController:picker animated:YES completion:nil];
+    [viewcon presentModalViewController:picker animated:YES];
+    //[viewcon presentViewController:picker animated:YES completion:nil]; //only in iOS 5.0
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

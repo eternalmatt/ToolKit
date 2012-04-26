@@ -59,4 +59,13 @@
 
 -(void)addX:(UIAccelerationValue)x y:(UIAccelerationValue)y z:(UIAccelerationValue)z;
 
+CGColorRef CreateDeviceGrayColor(CGFloat w, CGFloat a);
+CGColorRef CreateDeviceRGBColor(CGFloat r, CGFloat g, CGFloat b, CGFloat a);
+CGColorRef graphBackgroundColor();
+CGColorRef graphLineColor();
+CGColorRef graphXColor();
+CGColorRef graphYColor();
+CGColorRef graphZColor();
+void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width);
+
 @end

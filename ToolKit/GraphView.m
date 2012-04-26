@@ -59,6 +59,7 @@
 
 // Functions used to draw all content
 
+
 CGColorRef CreateDeviceGrayColor(CGFloat w, CGFloat a)
 {
 	CGColorSpaceRef gray = CGColorSpaceCreateDeviceGray();

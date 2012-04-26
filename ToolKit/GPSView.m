@@ -70,8 +70,9 @@ typedef enum {
     UIViewController *parent = [self firstAvailableUIViewController];
     [parent.navigationController pushViewController:viewcon animated:YES];
     
-    self.mapView.region = MKCoordinateRegionMake(self.mapView.userLocation.coordinate,      //center coordinate
-                                                 MKCoordinateSpanMake(0.05, 0.05));         //size in degrees.
+    if (self.mapView.userLocation)
+        self.mapView.region = MKCoordinateRegionMake(self.mapView.userLocation.coordinate,      //center coordinate
+                                                     MKCoordinateSpanMake(0.05, 0.05));         //size in degrees.
 }
 
 -(void)startButtonPressed:(UIButton*)sender
