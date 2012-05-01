@@ -15,10 +15,11 @@
 @property (nonatomic, strong) UIViewController *textInputController;
 @property (nonatomic, strong, retain)   UITextView *textView;
 @property (nonatomic) NSUInteger row;
+@property (nonatomic, strong) NSString *textInputSaveButton;
 @end
 
 @implementation TextInputView
-@synthesize textLabels, textInputs, textInputController, textView, row;
+@synthesize textLabels, textInputs, textInputController, textView, row, textInputSaveButton;
 
 -(NSArray*)textStringsFromUser
 {
@@ -34,11 +35,12 @@
         
         NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
         self.textLabels = [bundle objectForKey:@"TextInputTextBoxes"];
+        self.textInputSaveButton = [bundle objectForKey:@"TextInputSaveButton"];
         
         
         self.textInputs = [NSMutableArray arrayWithCapacity:textLabels.count];
         for(int i=0; i < textLabels.count; i++)
-            [self.textInputs addObject:[NSString stringWithFormat:@"%d", i]];
+            [self.textInputs addObject:[NSString string]];
         
         
         self.textInputController = [[UIViewController alloc] init];
@@ -48,7 +50,7 @@
         UIButton *save = [UIButton buttonWithType:UIButtonTypeRoundedRect];   
         save.frame = CGRectMake(bounds.origin.x+20, bounds.origin.y+10, bounds.size.width-40, 30);
         save.titleLabel.textAlignment = UITextAlignmentCenter;
-        [save setTitle:@"Save text" forState:UIControlStateNormal];
+        [save setTitle:self.textInputSaveButton forState:UIControlStateNormal];
         [save addTarget:self 
                  action:@selector(saveText) 
        forControlEvents:UIControlEventTouchUpInside];

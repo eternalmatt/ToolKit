@@ -504,7 +504,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3000B59714F426C00054E59A /* Build configuration list for PBXNativeTarget "ToolKit" */;
 			buildPhases = (
-				30D94B2715502BF900BD9332 /* ShellScript */,
+				30D94B2715502BF900BD9332 /* Run Script */,
 				3000B57B14F426C00054E59A /* Sources */,
 				3000B57C14F426C00054E59A /* Frameworks */,
 				3000B57D14F426C00054E59A /* Resources */,
@@ -558,13 +558,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		30D94B2715502BF900BD9332 /* ShellScript */ = {
+		30D94B2715502BF900BD9332 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,10 +36,12 @@ enum { ActionButtonRecording = 0,
     {
         self.backgroundColor = [UIColor groupTableViewBackgroundColor];
         self.accelerationData = [NSMutableArray arrayWithCapacity:1024];
-        
-        [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.25];
-        
         NSDictionary *bundle    = [[NSBundle mainBundle] infoDictionary];
+        
+        CGFloat updateInterval = [[bundle objectForKey:@"AccelerometerUpdateInterval"] floatValue];
+        [[UIAccelerometer sharedAccelerometer] setUpdateInterval:updateInterval];
+        
+        
         self.startButtonText    = [bundle objectForKey:@"ActionButtonStartText"];
         self.stopButtonText     = [bundle objectForKey:@"ActionButtonStopText"];
         

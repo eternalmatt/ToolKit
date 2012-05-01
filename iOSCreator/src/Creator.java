@@ -9,24 +9,25 @@ public class Creator
 	
 	public static void main(String[] args)
 	{
+		String filePath = "/Users/msenn2/Dropbox/Toolkit/Xcode/ToolKit/ToolKit/"; //this path should be customized
+		final String fileName = filePath + "ToolKit-Info.plist";
+		
 		try {
-			String fileName = "/Users/msenn2/Dropbox/Toolkit/Xcode/ToolKit/ToolKit/ToolKit-Info.plist";
 			BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
 			writer.write(createFile());
 			writer.close();
+			System.out.println("File written: " + fileName);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.out.println("File not written.");
 		} finally {
 		}
-		
-		System.out.println("File written");
 	}
 	
 	public static String createFile()
 	{
-		StringBuilder file = null;
-		file = new StringBuilder(startFile());
+		final StringBuilder file = new StringBuilder(startFile());
 		file.append(mainContents());
 		file.append(makeKeyAndValue("UploadButtonText", 		"Upload to Campaign"));
 		file.append(makeKeyAndValue("ActionButtonStartText", 	"Start capture"));
@@ -40,8 +41,13 @@ public class Creator
 		file.append(makeArrayFromStrings("Sensors", 
 				new String[]{"Acceleration", "Camera", "Location", "TextInput"}));
 		
+		file.append(makeKeyAndValue("AccelerometerUpdateInterval","0.25"));
+		file.append(makeKeyAndValue("GPSFormatString","GPS: %.5f %.5f\""));
+		file.append(makeKeyAndValue("TextInputSaveButton","Save"));
 		
-		return file.append(endFile()).toString();
+		
+		file.append(endFile());
+		return file.toString();
 	}
 	
 	private static StringBuilder makeKeyAndValue(String key, String value)
@@ -55,10 +61,14 @@ public class Creator
 	
 	private static StringBuilder makeArrayFromStrings(String key, String[] strings)
 	{
-		StringBuilder array = new StringBuilder("<key>" + key + "</key>" + "<array>");
+		final StringBuilder array = new StringBuilder("<key>")
+											  .append(key)
+										      .append("</key><array>");
 		
 		for(String string : strings)
-			array.append("<string>" + string + "</string>");
+			array.append("<string>")
+                 .append(string)
+                 .append("</string>");
 		
 		array.append("</array>");
 		
