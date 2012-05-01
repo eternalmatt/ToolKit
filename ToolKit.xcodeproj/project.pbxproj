@@ -68,6 +68,17 @@
 		A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464514F547850075405B /* UIView+UIKitCategories.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		30D94B2515502B8500BD9332 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		3000B57F14F426C00054E59A /* ToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3000B58314F426C00054E59A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -493,11 +504,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3000B59714F426C00054E59A /* Build configuration list for PBXNativeTarget "ToolKit" */;
 			buildPhases = (
+				30D94B2715502BF900BD9332 /* ShellScript */,
 				3000B57B14F426C00054E59A /* Sources */,
 				3000B57C14F426C00054E59A /* Frameworks */,
 				3000B57D14F426C00054E59A /* Resources */,
 			);
 			buildRules = (
+				30D94B2515502B8500BD9332 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -543,6 +556,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30D94B2715502BF900BD9332 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git submodule sync\ngit submodule update";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3000B57B14F426C00054E59A /* Sources */ = {
