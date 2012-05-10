@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *pointsLabel;
 
+/* perhaps a mutable array of incentive objects? */
+@property (nonatomic, strong) NSMutableArray *incentives;
+
 @end

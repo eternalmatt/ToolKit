@@ -9,14 +9,27 @@
 #import "Incentive.h"
 
 @implementation Incentive
-@synthesize points;
+@synthesize points = _points;
+@synthesize purpose = _purpose;
+@synthesize campaign = _campaign;
 
--(id)init
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"Points: %d, purpose: %@, campaign: %@",
+            self.points, 
+            self.purpose,
+            self.campaign];
+}
+
+-(id)initWithPoints:(NSNumber*)points
+        withPurpose:(NSString*)purpose 
+        andCampaign:(NSString*)campaign
 {
     if (self = [super init])
     {
-        //NSDictionary *bundle = [[NSBundle mainBundle] infoDictionary];
-        
+        self.points = points;
+        self.purpose = purpose;
+        self.campaign = campaign;
     }
     return self;
 }

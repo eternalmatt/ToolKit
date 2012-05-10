@@ -524,7 +524,6 @@
 			buildConfigurationList = 3000B59714F426C00054E59A /* Build configuration list for PBXNativeTarget "ToolKit" */;
 			buildPhases = (
 				30D94B2715502BF900BD9332 /* Run Script */,
-				A234D0A5155AE80E00BEE784 /* ShellScript */,
 				3000B57B14F426C00054E59A /* Sources */,
 				3000B57C14F426C00054E59A /* Frameworks */,
 				3000B57D14F426C00054E59A /* Resources */,
@@ -591,19 +590,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git submodule sync\ngit submodule update";
-		};
-		A234D0A5155AE80E00BEE784 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd iOSCreator/src\njavac Creator.java\njava Creator";
 		};
 /* End PBXShellScriptBuildPhase section */
 

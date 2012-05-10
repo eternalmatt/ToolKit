@@ -14,6 +14,7 @@
 #import "ToolKitXMLBuilder.h"
 #import "IncentivesViewController.h"
 #import "ASIHTTPRequest.h"
+#import "Incentive.h"
 
 @interface ToolKitViewController ()
 @property (nonatomic) NSInteger startTime, endTime;
@@ -112,6 +113,46 @@
 -(void)showIncentives:(UIBarButtonItem*)button
 {
     IncentivesViewController *viewcon = [[IncentivesViewController alloc] init];
+    
+    for(UIView *view in self.scrollView.subviews)
+    {
+        NSInteger points = 0;
+        NSString* purpose = nil;
+        NSString* campaign = nil;
+        if ([view isKindOfClass:[CameraView class]])
+        {
+            CameraView *v = (CameraView*)view;
+            points = 10;
+            purpose = @"Camera";
+        }
+        else if ([view isKindOfClass:[AccelerationView class]])
+        {
+            AccelerationView *v = (AccelerationView*)view;
+            points = v.data.count;
+            purpose = @"Acceleration";
+        }
+        else if ([view isKindOfClass:[GPSView class]])
+        {
+            GPSView *v = (GPSView*)view;
+            points = v.GPSLocations.count;
+            purpose = @"GPS";
+        }
+        else if ([view isKindOfClass:[TextInputView class]])
+        {
+            TextInputView *v = (TextInputView*)view;
+            points = v.textStringsFromUser.count;
+            purpose = @"Questions";
+        }
+        
+        /* add an incentive to the incentives view controller */
+        [viewcon.incentives addObject:
+         [[Incentive alloc] initWithPoints:[NSNumber numberWithInt:points]
+                               withPurpose:purpose
+                               andCampaign:campaign]];
+        
+        
+    }
+    
     [self.navigationController pushViewController:viewcon animated:YES];
 }
 
