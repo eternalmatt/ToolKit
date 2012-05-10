@@ -9,7 +9,7 @@ public class Creator
 	
 	public static void main(String[] args)
 	{
-		String filePath = "/Users/msenn2/Dropbox/Toolkit/Xcode/ToolKit/ToolKit/"; //this path should be customized
+		String filePath = "ToolKit/"; //this path should be customized
 		final String fileName = filePath + "ToolKit-Info.plist";
 		
 		try {
@@ -41,7 +41,7 @@ public class Creator
 		file.append(makeArrayFromStrings("Sensors", 
 				new String[]{"Acceleration", "Camera", "Location", "TextInput"}));
 		
-		file.append(makeKeyAndValue("AccelerometerUpdateInterval","0.25"));
+		file.append(makeKeyAndValue("AccelerometerUpdateInterval","0.1"));
 		file.append(makeKeyAndValue("GPSFormatString","GPS: %.5f %.5f\""));
 		file.append(makeKeyAndValue("TextInputSaveButton","Save"));
 		

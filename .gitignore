@@ -14,3 +14,9 @@ xcuserdata
 profile
 *.moved-aside
 bin/
+
+# Weird Apple thing
+.DS_Store
+
+# Java class file
+*.class

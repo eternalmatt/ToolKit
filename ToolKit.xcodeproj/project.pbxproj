@@ -13,6 +13,8 @@
 		3000B58E14F426C00054E59A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3000B58C14F426C00054E59A /* InfoPlist.strings */; };
 		3000B59014F426C00054E59A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3000B58F14F426C00054E59A /* main.m */; };
 		3000B59414F426C00054E59A /* UNCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3000B59314F426C00054E59A /* UNCCAppDelegate.m */; };
+		300D93471550584D00229958 /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 300D93331550584D00229958 /* UIImage+ProportionalFill.m */; };
+		300D93481550584D00229958 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 300D93351550584D00229958 /* UIImage+Tint.m */; };
 		301FBB1814F427D50093161F /* GPSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301FBB1714F427D50093161F /* GPSView.m */; };
 		301FBB1B14F428070093161F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB1A14F428070093161F /* MapKit.framework */; };
 		301FBB2114F4295C0093161F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB2014F4295C0093161F /* CoreLocation.framework */; };
@@ -23,6 +25,7 @@
 		30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */; };
 		3076C1BA15408E4200599BAB /* IncentivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076C1B815408E4200599BAB /* IncentivesViewController.m */; };
 		3076C1BB15408E4200599BAB /* IncentivesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3076C1B915408E4200599BAB /* IncentivesViewController.xib */; };
+		3085B54115504DB4000C9A08 /* Incentive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3085B54015504DB4000C9A08 /* Incentive.m */; };
 		308D88AC1546F5DF00A39754 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D885B1546F5DF00A39754 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		308D88AD1546F5DF00A39754 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D885E1546F5DF00A39754 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		308D88AE1546F5DF00A39754 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D88601546F5DF00A39754 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
@@ -57,7 +60,6 @@
 		30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C4EE2914F6AB5A00BC0074 /* CameraView.m */; };
 		30C7F9F71522426400E2F04D /* CyclicArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C7F9F61522426400E2F04D /* CyclicArray.m */; };
 		30E6D05F15488C0B0018E334 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E6D05E15488C0B0018E334 /* GraphView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
-		30F2E4D915347DE6008FAE1B /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E4D815347DE6008FAE1B /* UIImage+ProportionalFill.m */; };
 		30F2E4EB15347E0D008FAE1B /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E4DE15347E0D008FAE1B /* DDXMLElementAdditions.m */; };
 		30F2E4EC15347E0D008FAE1B /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E4E115347E0D008FAE1B /* NSString+DDXML.m */; };
 		30F2E4ED15347E0D008FAE1B /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E4E415347E0D008FAE1B /* DDXMLDocument.m */; };
@@ -90,6 +92,10 @@
 		3000B59114F426C00054E59A /* ToolKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToolKit-Prefix.pch"; sourceTree = "<group>"; };
 		3000B59214F426C00054E59A /* UNCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNCCAppDelegate.h; sourceTree = "<group>"; };
 		3000B59314F426C00054E59A /* UNCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UNCCAppDelegate.m; sourceTree = "<group>"; };
+		300D93321550584D00229958 /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
+		300D93331550584D00229958 /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
+		300D93341550584D00229958 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		300D93351550584D00229958 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		301FBB1614F427D50093161F /* GPSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSView.h; sourceTree = "<group>"; };
 		301FBB1714F427D50093161F /* GPSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSView.m; sourceTree = "<group>"; };
 		301FBB1A14F428070093161F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -106,6 +112,8 @@
 		3076C1B715408E4200599BAB /* IncentivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncentivesViewController.h; sourceTree = "<group>"; };
 		3076C1B815408E4200599BAB /* IncentivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncentivesViewController.m; sourceTree = "<group>"; };
 		3076C1B915408E4200599BAB /* IncentivesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncentivesViewController.xib; sourceTree = "<group>"; };
+		3085B53F15504DB4000C9A08 /* Incentive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Incentive.h; path = ../../../../Toolkit/Xcode/ToolKit/ToolKit/Incentive.h; sourceTree = "<group>"; };
+		3085B54015504DB4000C9A08 /* Incentive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Incentive.m; path = ../../../../Toolkit/Xcode/ToolKit/ToolKit/Incentive.m; sourceTree = "<group>"; };
 		308D885A1546F5DF00A39754 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		308D885B1546F5DF00A39754 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		308D885C1546F5DF00A39754 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -171,8 +179,6 @@
 		30C7F9F61522426400E2F04D /* CyclicArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CyclicArray.m; sourceTree = "<group>"; };
 		30E6D05D15488C0B0018E334 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
 		30E6D05E15488C0B0018E334 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
-		30F2E4D715347DD8008FAE1B /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ProportionalFill.h"; path = "MGImageUtilities/Classes/UIImage+ProportionalFill.h"; sourceTree = SOURCE_ROOT; };
-		30F2E4D815347DE6008FAE1B /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ProportionalFill.m"; path = "MGImageUtilities/Classes/UIImage+ProportionalFill.m"; sourceTree = SOURCE_ROOT; };
 		30F2E4DD15347E0D008FAE1B /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
 		30F2E4DE15347E0D008FAE1B /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
 		30F2E4E015347E0D008FAE1B /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
@@ -240,6 +246,9 @@
 				3000B58314F426C00054E59A /* UIKit.framework */,
 				3000B58514F426C00054E59A /* Foundation.framework */,
 				3000B58714F426C00054E59A /* CoreGraphics.framework */,
+				302DE28E14F444D200AAB79D /* QuartzCore.framework */,
+				301FBB2014F4295C0093161F /* CoreLocation.framework */,
+				301FBB1A14F428070093161F /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,6 +275,7 @@
 			children = (
 				308D88591546F5DF00A39754 /* asi-http-request */,
 				30F2E4DB15347E0D008FAE1B /* KissXML */,
+				300D932F1550584D00229958 /* MGImageUtilities */,
 				30635C29151BA887009DE521 /* ToolKitXMLBuilder.h */,
 				30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */,
 				3000B58B14F426C00054E59A /* ToolKit-Info.plist */,
@@ -274,8 +284,6 @@
 				3000B59114F426C00054E59A /* ToolKit-Prefix.pch */,
 				A2B5464414F547850075405B /* UIView+UIKitCategories.h */,
 				A2B5464514F547850075405B /* UIView+UIKitCategories.m */,
-				30F2E4D715347DD8008FAE1B /* UIImage+ProportionalFill.h */,
-				30F2E4D815347DE6008FAE1B /* UIImage+ProportionalFill.m */,
 				30635C22151B9987009DE521 /* NSString+Base64.h */,
 				30635C23151B9987009DE521 /* NSString+Base64.m */,
 				30635C26151B9A4C009DE521 /* NSData+Base64.h */,
@@ -286,6 +294,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		300D932F1550584D00229958 /* MGImageUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				300D93321550584D00229958 /* UIImage+ProportionalFill.h */,
+				300D93331550584D00229958 /* UIImage+ProportionalFill.m */,
+				300D93341550584D00229958 /* UIImage+Tint.h */,
+				300D93351550584D00229958 /* UIImage+Tint.m */,
+			);
+			name = MGImageUtilities;
+			path = ../MGImageUtilities/Classes;
+			sourceTree = "<group>";
+		};
 		302DE29014F4455200AAB79D /* Acceleration */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +313,6 @@
 				302DE28414F4420E00AAB79D /* AccelerationView.m */,
 				30E6D05D15488C0B0018E334 /* GraphView.h */,
 				30E6D05E15488C0B0018E334 /* GraphView.m */,
-				302DE28E14F444D200AAB79D /* QuartzCore.framework */,
 			);
 			name = Acceleration;
 			sourceTree = "<group>";
@@ -303,8 +322,6 @@
 			children = (
 				301FBB1614F427D50093161F /* GPSView.h */,
 				301FBB1714F427D50093161F /* GPSView.m */,
-				301FBB2014F4295C0093161F /* CoreLocation.framework */,
-				301FBB1A14F428070093161F /* MapKit.framework */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -312,6 +329,8 @@
 		3076C1B215408CF400599BAB /* Incentives */ = {
 			isa = PBXGroup;
 			children = (
+				3085B53F15504DB4000C9A08 /* Incentive.h */,
+				3085B54015504DB4000C9A08 /* Incentive.m */,
 				3076C1B715408E4200599BAB /* IncentivesViewController.h */,
 				3076C1B815408E4200599BAB /* IncentivesViewController.m */,
 				3076C1B915408E4200599BAB /* IncentivesViewController.xib */,
@@ -505,6 +524,7 @@
 			buildConfigurationList = 3000B59714F426C00054E59A /* Build configuration list for PBXNativeTarget "ToolKit" */;
 			buildPhases = (
 				30D94B2715502BF900BD9332 /* Run Script */,
+				A234D0A5155AE80E00BEE784 /* ShellScript */,
 				3000B57B14F426C00054E59A /* Sources */,
 				3000B57C14F426C00054E59A /* Frameworks */,
 				3000B57D14F426C00054E59A /* Resources */,
@@ -572,6 +592,19 @@
 			shellPath = /bin/sh;
 			shellScript = "git submodule sync\ngit submodule update";
 		};
+		A234D0A5155AE80E00BEE784 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd iOSCreator/src\njavac Creator.java\njava Creator";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -591,7 +624,6 @@
 				30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */,
 				A2A0A5AC151F9DD300D27E0B /* TextInputView.m in Sources */,
 				30C7F9F71522426400E2F04D /* CyclicArray.m in Sources */,
-				30F2E4D915347DE6008FAE1B /* UIImage+ProportionalFill.m in Sources */,
 				30F2E4EB15347E0D008FAE1B /* DDXMLElementAdditions.m in Sources */,
 				30F2E4EC15347E0D008FAE1B /* NSString+DDXML.m in Sources */,
 				30F2E4ED15347E0D008FAE1B /* DDXMLDocument.m in Sources */,
@@ -622,6 +654,9 @@
 				308D88C11546F5DF00A39754 /* ASIS3ServiceRequest.m in Sources */,
 				308D88D91546F6E500A39754 /* Reachability.m in Sources */,
 				30E6D05F15488C0B0018E334 /* GraphView.m in Sources */,
+				3085B54115504DB4000C9A08 /* Incentive.m in Sources */,
+				300D93471550584D00229958 /* UIImage+ProportionalFill.m in Sources */,
+				300D93481550584D00229958 /* UIImage+Tint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
