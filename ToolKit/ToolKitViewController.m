@@ -121,7 +121,7 @@
         NSString* campaign = nil;
         if ([view isKindOfClass:[CameraView class]])
         {
-            CameraView *v = (CameraView*)view;
+            //CameraView *v = (CameraView*)view;
             points = 10;
             purpose = @"Camera";
         }
