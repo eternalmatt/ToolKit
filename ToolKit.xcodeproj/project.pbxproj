@@ -20,12 +20,9 @@
 		301FBB2114F4295C0093161F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301FBB2014F4295C0093161F /* CoreLocation.framework */; };
 		302DE28514F4420E00AAB79D /* AccelerationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DE28414F4420E00AAB79D /* AccelerationView.m */; };
 		302DE28F14F444D200AAB79D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302DE28E14F444D200AAB79D /* QuartzCore.framework */; };
-		30635C24151B9987009DE521 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C23151B9987009DE521 /* NSString+Base64.m */; };
-		30635C28151B9A4D009DE521 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C27151B9A4C009DE521 /* NSData+Base64.m */; };
 		30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */; };
 		3076C1BA15408E4200599BAB /* IncentivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076C1B815408E4200599BAB /* IncentivesViewController.m */; };
 		3076C1BB15408E4200599BAB /* IncentivesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3076C1B915408E4200599BAB /* IncentivesViewController.xib */; };
-		3085B54115504DB4000C9A08 /* Incentive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3085B54015504DB4000C9A08 /* Incentive.m */; };
 		308D88AC1546F5DF00A39754 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D885B1546F5DF00A39754 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		308D88AD1546F5DF00A39754 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D885E1546F5DF00A39754 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		308D88AE1546F5DF00A39754 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D88601546F5DF00A39754 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
@@ -68,6 +65,9 @@
 		A2A0A5AC151F9DD300D27E0B /* TextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0A5AB151F9DD300D27E0B /* TextInputView.m */; };
 		A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5463E14F4AFB40075405B /* ToolKitViewController.m */; };
 		A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B5464514F547850075405B /* UIView+UIKitCategories.m */; };
+		A2DC41DF155C9F8300EE2EBD /* Incentive.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DC41DE155C9F8300EE2EBD /* Incentive.m */; };
+		A2DC41E5155C9F9700EE2EBD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DC41E2155C9F9700EE2EBD /* NSData+Base64.m */; };
+		A2DC41E6155C9F9700EE2EBD /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DC41E4155C9F9700EE2EBD /* NSString+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -103,17 +103,11 @@
 		302DE28314F4420E00AAB79D /* AccelerationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerationView.h; sourceTree = "<group>"; };
 		302DE28414F4420E00AAB79D /* AccelerationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerationView.m; sourceTree = "<group>"; };
 		302DE28E14F444D200AAB79D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		30635C22151B9987009DE521 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Base64.h"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSString+Base64.h"; sourceTree = "<group>"; };
-		30635C23151B9987009DE521 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSString+Base64.m"; sourceTree = "<group>"; };
-		30635C26151B9A4C009DE521 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSData+Base64.h"; sourceTree = "<group>"; };
-		30635C27151B9A4C009DE521 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../../../../Toolkit/Xcode/ToolKit/ToolKit/NSData+Base64.m"; sourceTree = "<group>"; };
 		30635C29151BA887009DE521 /* ToolKitXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKitXMLBuilder.h; sourceTree = "<group>"; };
 		30635C2A151BA887009DE521 /* ToolKitXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKitXMLBuilder.m; sourceTree = "<group>"; };
 		3076C1B715408E4200599BAB /* IncentivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncentivesViewController.h; sourceTree = "<group>"; };
 		3076C1B815408E4200599BAB /* IncentivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncentivesViewController.m; sourceTree = "<group>"; };
 		3076C1B915408E4200599BAB /* IncentivesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncentivesViewController.xib; sourceTree = "<group>"; };
-		3085B53F15504DB4000C9A08 /* Incentive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Incentive.h; path = ../../../../Toolkit/Xcode/ToolKit/ToolKit/Incentive.h; sourceTree = "<group>"; };
-		3085B54015504DB4000C9A08 /* Incentive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Incentive.m; path = ../../../../Toolkit/Xcode/ToolKit/ToolKit/Incentive.m; sourceTree = "<group>"; };
 		308D885A1546F5DF00A39754 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		308D885B1546F5DF00A39754 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		308D885C1546F5DF00A39754 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -197,6 +191,12 @@
 		A2B5463E14F4AFB40075405B /* ToolKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKitViewController.m; sourceTree = "<group>"; };
 		A2B5464414F547850075405B /* UIView+UIKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIKitCategories.h"; sourceTree = "<group>"; };
 		A2B5464514F547850075405B /* UIView+UIKitCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIKitCategories.m"; sourceTree = "<group>"; };
+		A2DC41DD155C9F8300EE2EBD /* Incentive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Incentive.h; sourceTree = "<group>"; };
+		A2DC41DE155C9F8300EE2EBD /* Incentive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Incentive.m; sourceTree = "<group>"; };
+		A2DC41E1155C9F9700EE2EBD /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		A2DC41E2155C9F9700EE2EBD /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		A2DC41E3155C9F9700EE2EBD /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		A2DC41E4155C9F9700EE2EBD /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,10 +284,10 @@
 				3000B59114F426C00054E59A /* ToolKit-Prefix.pch */,
 				A2B5464414F547850075405B /* UIView+UIKitCategories.h */,
 				A2B5464514F547850075405B /* UIView+UIKitCategories.m */,
-				30635C22151B9987009DE521 /* NSString+Base64.h */,
-				30635C23151B9987009DE521 /* NSString+Base64.m */,
-				30635C26151B9A4C009DE521 /* NSData+Base64.h */,
-				30635C27151B9A4C009DE521 /* NSData+Base64.m */,
+				A2DC41E1155C9F9700EE2EBD /* NSData+Base64.h */,
+				A2DC41E2155C9F9700EE2EBD /* NSData+Base64.m */,
+				A2DC41E3155C9F9700EE2EBD /* NSString+Base64.h */,
+				A2DC41E4155C9F9700EE2EBD /* NSString+Base64.m */,
 				30C7F9F51522426400E2F04D /* CyclicArray.h */,
 				30C7F9F61522426400E2F04D /* CyclicArray.m */,
 			);
@@ -329,8 +329,8 @@
 		3076C1B215408CF400599BAB /* Incentives */ = {
 			isa = PBXGroup;
 			children = (
-				3085B53F15504DB4000C9A08 /* Incentive.h */,
-				3085B54015504DB4000C9A08 /* Incentive.m */,
+				A2DC41DD155C9F8300EE2EBD /* Incentive.h */,
+				A2DC41DE155C9F8300EE2EBD /* Incentive.m */,
 				3076C1B715408E4200599BAB /* IncentivesViewController.h */,
 				3076C1B815408E4200599BAB /* IncentivesViewController.m */,
 				3076C1B915408E4200599BAB /* IncentivesViewController.xib */,
@@ -589,7 +589,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git submodule sync\ngit submodule update";
+			shellScript = "git submodule init\ngit submodule sync\ngit submodule update";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -605,8 +605,6 @@
 				A2B5463F14F4AFB40075405B /* ToolKitViewController.m in Sources */,
 				A2B5464614F547850075405B /* UIView+UIKitCategories.m in Sources */,
 				30C4EE2B14F6AB5A00BC0074 /* CameraView.m in Sources */,
-				30635C24151B9987009DE521 /* NSString+Base64.m in Sources */,
-				30635C28151B9A4D009DE521 /* NSData+Base64.m in Sources */,
 				30635C2B151BA888009DE521 /* ToolKitXMLBuilder.m in Sources */,
 				A2A0A5AC151F9DD300D27E0B /* TextInputView.m in Sources */,
 				30C7F9F71522426400E2F04D /* CyclicArray.m in Sources */,
@@ -640,9 +638,11 @@
 				308D88C11546F5DF00A39754 /* ASIS3ServiceRequest.m in Sources */,
 				308D88D91546F6E500A39754 /* Reachability.m in Sources */,
 				30E6D05F15488C0B0018E334 /* GraphView.m in Sources */,
-				3085B54115504DB4000C9A08 /* Incentive.m in Sources */,
 				300D93471550584D00229958 /* UIImage+ProportionalFill.m in Sources */,
 				300D93481550584D00229958 /* UIImage+Tint.m in Sources */,
+				A2DC41DF155C9F8300EE2EBD /* Incentive.m in Sources */,
+				A2DC41E5155C9F9700EE2EBD /* NSData+Base64.m in Sources */,
+				A2DC41E6155C9F9700EE2EBD /* NSString+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
